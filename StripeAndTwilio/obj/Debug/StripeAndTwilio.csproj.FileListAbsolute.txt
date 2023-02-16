@@ -87,3 +87,7 @@ C:\Users\mirmo\source\repos\StripeAndTwilio\StripeAndTwilio\obj\Debug\StripeAndT
 C:\Users\mirmo\source\repos\StripeAndTwilio\StripeAndTwilio\obj\Debug\StripeAndTwilio.csproj.CopyComplete
 C:\Users\mirmo\source\repos\StripeAndTwilio\StripeAndTwilio\obj\Debug\StripeAndTwilio.dll
 C:\Users\mirmo\source\repos\StripeAndTwilio\StripeAndTwilio\obj\Debug\StripeAndTwilio.pdb
+C:\Users\mirmo\source\repos\StripeAndTwilio\StripeAndTwilio\bin\EntityFramework.dll
+C:\Users\mirmo\source\repos\StripeAndTwilio\StripeAndTwilio\bin\EntityFramework.SqlServer.dll
+C:\Users\mirmo\source\repos\StripeAndTwilio\StripeAndTwilio\bin\EntityFramework.xml
+C:\Users\mirmo\source\repos\StripeAndTwilio\StripeAndTwilio\bin\EntityFramework.SqlServer.xml
