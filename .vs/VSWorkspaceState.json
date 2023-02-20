@@ -1,4 +1,10 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\StripeAndTwilio",
+    "\\StripeAndTwilio\\Views",
+    "\\StripeAndTwilio\\Views\\Home"
+  ],
+  "SelectedNode": "\\StripeAndTwilio\\Views\\Home\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
