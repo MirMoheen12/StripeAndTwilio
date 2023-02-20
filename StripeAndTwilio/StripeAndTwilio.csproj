@@ -152,9 +152,106 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Customer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\css\bootstrap-grid.css" />
+    <Content Include="Content\assets\css\font-awesome.css" />
+    <Content Include="Content\assets\css\jquery-ui.css" />
+    <Content Include="Content\assets\css\style.css" />
+    <Content Include="Content\assets\css\swipebox.css" />
+    <Content Include="Content\assets\css\swiper.css" />
+    <Content Include="Content\assets\css\welcome.css" />
+    <Content Include="Content\assets\css\zoomslider.css" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\assets\images\favicon.png" />
+    <Content Include="Content\assets\images\location-black.png" />
+    <Content Include="Content\assets\images\logo-inner.png" />
+    <Content Include="Content\assets\images\logo.png" />
+    <Content Include="Content\assets\images\swipebox\icons.png" />
+    <Content Include="Content\assets\images\swipebox\icons.svg" />
+    <Content Include="Content\assets\images\swipebox\loader.gif" />
+    <Content Include="Content\assets\images\_app-apple.png" />
+    <Content Include="Content\assets\images\_app-bg.png" />
+    <Content Include="Content\assets\images\_app-google.png" />
+    <Content Include="Content\assets\images\_banner-1.png" />
+    <Content Include="Content\assets\images\_banner-2.png" />
+    <Content Include="Content\assets\images\_blog-large.jpg" />
+    <Content Include="Content\assets\images\_car-big-2.png" />
+    <Content Include="Content\assets\images\_car-big-side.png" />
+    <Content Include="Content\assets\images\_car-big.png" />
+    <Content Include="Content\assets\images\_car-splash.png" />
+    <Content Include="Content\assets\images\_client-1.jpg" />
+    <Content Include="Content\assets\images\_client-2.jpg" />
+    <Content Include="Content\assets\images\_client-3.jpg" />
+    <Content Include="Content\assets\images\_client-4.jpg" />
+    <Content Include="Content\assets\images\_client-5.jpg" />
+    <Content Include="Content\assets\images\_client-6.jpg" />
+    <Content Include="Content\assets\images\_client-7.jpg" />
+    <Content Include="Content\assets\images\_dialog.png" />
+    <Content Include="Content\assets\images\_download-bg.jpg" />
+    <Content Include="Content\assets\images\_footer-car.png" />
+    <Content Include="Content\assets\images\_gallery-1.jpg" />
+    <Content Include="Content\assets\images\_gallery-2.jpg" />
+    <Content Include="Content\assets\images\_gallery-3.jpg" />
+    <Content Include="Content\assets\images\_gallery-4.jpg" />
+    <Content Include="Content\assets\images\_gallery-5.jpg" />
+    <Content Include="Content\assets\images\_gallery-6.jpg" />
+    <Content Include="Content\assets\images\_homepage-1-bg.jpg" />
+    <Content Include="Content\assets\images\_homepage-3-2-bg.jpg" />
+    <Content Include="Content\assets\images\_homepage-3-bg.jpg" />
+    <Content Include="Content\assets\images\_icon-car-1.png" />
+    <Content Include="Content\assets\images\_icon-car-2.png" />
+    <Content Include="Content\assets\images\_icon-car-3.png" />
+    <Content Include="Content\assets\images\_icon-car-4.png" />
+    <Content Include="Content\assets\images\_inner-bg.jpg" />
+    <Content Include="Content\assets\images\_insta-1.jpg" />
+    <Content Include="Content\assets\images\_insta-2.jpg" />
+    <Content Include="Content\assets\images\_insta-3.jpg" />
+    <Content Include="Content\assets\images\_insta-4.jpg" />
+    <Content Include="Content\assets\images\_insta-5.jpg" />
+    <Content Include="Content\assets\images\_insta-6.jpg" />
+    <Content Include="Content\assets\images\_mobile.png" />
+    <Content Include="Content\assets\images\_partner-1.png" />
+    <Content Include="Content\assets\images\_partner-2.png" />
+    <Content Include="Content\assets\images\_partner-3.png" />
+    <Content Include="Content\assets\images\_partner-4.png" />
+    <Content Include="Content\assets\images\_partner-5.png" />
+    <Content Include="Content\assets\images\_photo-inner.jpg" />
+    <Content Include="Content\assets\images\_services-1.png" />
+    <Content Include="Content\assets\images\_services-2.png" />
+    <Content Include="Content\assets\images\_services-3.png" />
+    <Content Include="Content\assets\images\_services-4.png" />
+    <Content Include="Content\assets\images\_tariff-1.png" />
+    <Content Include="Content\assets\images\_tariff-2.png" />
+    <Content Include="Content\assets\images\_tariff-3.png" />
+    <Content Include="Content\assets\images\_tariff-4.png" />
+    <Content Include="Content\assets\images\_tariff-bg.jpg" />
+    <Content Include="Content\assets\js\jquery-ui.min.js" />
+    <Content Include="Content\assets\js\jquery.min.js" />
+    <Content Include="Content\assets\js\map-style.js" />
+    <Content Include="Content\assets\js\modernizr-2.6.2.min.js" />
+    <Content Include="Content\assets\js\plugins.js" />
+    <Content Include="Content\assets\js\plugins.min.js" />
+    <Content Include="Content\assets\js\scripts.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -163,8 +260,30 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\assets\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -191,10 +310,10 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\CreateCheckoutSession.cshtml" />
+    <Content Include="Views\Shared\_Theme.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
