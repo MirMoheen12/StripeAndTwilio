@@ -314,6 +314,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\CreateCheckoutSession.cshtml" />
     <Content Include="Views\Shared\_Theme.cshtml" />
+    <Content Include="Views\Home\pakageSelection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
