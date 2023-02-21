@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>D:\Taxi</_PublishTargetUrl>
-    <History>True|2023-02-20T17:17:10.6023614Z;</History>
+    <History>False|2023-02-21T19:20:41.6708173Z;True|2023-02-20T22:17:10.6023614+05:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>

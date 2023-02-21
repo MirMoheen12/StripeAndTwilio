@@ -14,6 +14,7 @@ namespace StripeAndTwilio.Controllers
         DbEntities db=new DbEntities();
         public ActionResult Index()
         {
+            var fat = db.Customers.ToList();
             return View();
         }
         public ActionResult pakageSelection()

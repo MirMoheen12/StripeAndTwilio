@@ -12,5 +12,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Packages">
+      <EntityTypeMapping TypeName="StripeIntegerationModel.Package">
+        <MappingFragment StoreEntitySet="Package">
+          <ScalarProperty Name="Intialamount" ColumnName="Intialamount" />
+          <ScalarProperty Name="Bags" ColumnName="Bags" />
+          <ScalarProperty Name="Person" ColumnName="Person" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="PID" ColumnName="PID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
