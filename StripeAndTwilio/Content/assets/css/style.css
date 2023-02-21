@@ -1610,17 +1610,17 @@ nav.navbar.affix {
 .menu-types a.red {
   color: #9F340A;
 }
-.menu-types a.type-1 {
-  background-image: url("../images/_icon-car-1.png");
-}
-.menu-types a.type-2 {
-  background-image: url("../images/_icon-car-2.png");
-}
+    .menu-types a.type-1 {
+        background-image: url("../images/small.png");
+    }
+    .menu-types a.type-2 {
+        background-image: url("../images/business.png");
+    }
 .menu-types a.type-3 {
-  background-image: url("../images/_icon-car-3.png");
+  background-image: url("../images/vip.png");
 }
 .menu-types a.type-4 {
-  background-image: url("../images/_icon-car-4.png");
+  background-image: url("../images/bus.png");
 }
 .menu-types a:hover,
 .menu-types a.active {

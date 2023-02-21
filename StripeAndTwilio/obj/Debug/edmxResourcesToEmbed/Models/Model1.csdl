@@ -12,5 +12,16 @@
   </EntityType>
   <EntityContainer Name="DbEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Packages" EntityType="StripeIntegerationModel.Package" />
   </EntityContainer>
+  <EntityType Name="Package">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PackageName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Person" Type="Int32" />
+    <Property Name="Bags" Type="Int32" />
+    <Property Name="Intialamount" Type="Int32" />
+  </EntityType>
 </Schema>

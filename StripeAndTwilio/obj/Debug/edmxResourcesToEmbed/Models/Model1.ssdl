@@ -10,7 +10,18 @@
     <Property Name="Amount" Type="float" />
     <Property Name="DateAndTime" Type="date" />
   </EntityType>
+  <EntityType Name="Package">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PackageName" Type="varchar" MaxLength="100" />
+    <Property Name="Person" Type="int" />
+    <Property Name="Bags" Type="int" />
+    <Property Name="Intialamount" Type="int" />
+  </EntityType>
   <EntityContainer Name="StripeIntegerationModelStoreContainer">
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Package" EntityType="Self.Package" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

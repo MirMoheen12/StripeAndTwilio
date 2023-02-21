@@ -1,4 +1,5 @@
 ﻿using Stripe.Checkout;
+using StripeAndTwilio.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace StripeAndTwilio.Controllers
 {
     public class HomeController : Controller
     {
+        DbEntities db=new DbEntities();
         public ActionResult Index()
         {
             return View();
@@ -17,6 +19,7 @@ namespace StripeAndTwilio.Controllers
 
         public ActionResult About()
         {
+            var fat = db.Customers.ToList();
             ViewBag.Message = "Your application description page.";
 
             return View();
