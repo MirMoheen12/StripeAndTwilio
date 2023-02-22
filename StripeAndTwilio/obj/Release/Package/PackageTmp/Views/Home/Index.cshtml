@@ -52,16 +52,7 @@
                     </div>
                  
 
-                        @*<div class="form-group">
-                            <label>Destination: </label>
-                            <input class="form-control"
-                                   id="to_places"
-                                   placeholder="Enter a location" />
-                            <input id="destination"
-                                   name="destination"
-                                   required=""
-                                   type="hidden" />
-                        </div>*@
+                
                         <input class="btn btn-lg btn-yellow aligncenter" type="submit" value="Calculate" />
                 </form>
 
@@ -71,6 +62,11 @@
 
     </div>
 </div>
+
+<form id="formmintid" method="post" action="~/Home/Index">
+    <input name="mint" type="number"id="mintid" hidden />
+    <button type="submit" hidden>save</button>
+    </form>
 
 <div class="homepage-block-yellow-3">
     <div class="container">
@@ -423,8 +419,9 @@
                     console.log(distance_in_mile);
                     var duration_text = duration.text;
                     var duration_value = duration.value;
-                    alert(duration_value);
-
+                    //alert(duration_value);
+                    $("#mintid").val(duration_value);
+                    $('form#formmintid').submit();
                     //$("#mile").html(
                     //    `Distance in Miles: ${distance_in_mile.toFixed(2)}`
                     //);

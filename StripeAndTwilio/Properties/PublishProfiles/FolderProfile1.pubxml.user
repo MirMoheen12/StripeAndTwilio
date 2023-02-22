@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>D:\Taxi</_PublishTargetUrl>
-    <History>True|2023-02-21T19:34:04.9303768Z;True|2023-02-22T00:33:31.7736859+05:00;True|2023-02-22T00:23:45.3852335+05:00;False|2023-02-22T00:22:24.1029163+05:00;</History>
+    <History>True|2023-02-22T20:01:03.9646724Z;True|2023-02-22T00:34:04.9303768+05:00;True|2023-02-22T00:33:31.7736859+05:00;True|2023-02-22T00:23:45.3852335+05:00;False|2023-02-22T00:22:24.1029163+05:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -187,10 +187,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/20/2023 21:10:56</publishTime>
     </File>
     <File Include="bin/StripeAndTwilio.dll">
-      <publishTime>02/22/2023 00:34:02</publishTime>
+      <publishTime>02/23/2023 01:01:01</publishTime>
     </File>
     <File Include="bin/StripeAndTwilio.pdb">
-      <publishTime>02/22/2023 00:34:02</publishTime>
+      <publishTime>02/23/2023 01:01:01</publishTime>
     </File>
     <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
       <publishTime>02/20/2023 21:10:56</publishTime>
@@ -232,7 +232,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/20/2023 21:40:10</publishTime>
     </File>
     <File Include="Content/assets/css/style.css">
-      <publishTime>02/21/2023 19:55:44</publishTime>
+      <publishTime>02/22/2023 20:06:20</publishTime>
     </File>
     <File Include="Content/assets/css/swipebox.css">
       <publishTime>02/20/2023 21:40:10</publishTime>
@@ -460,7 +460,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/20/2023 21:40:11</publishTime>
     </File>
     <File Include="Content/assets/js/scripts.js">
-      <publishTime>02/20/2023 21:40:11</publishTime>
+      <publishTime>02/22/2023 18:59:50</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css">
       <publishTime>02/20/2023 21:10:49</publishTime>
@@ -562,10 +562,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/20/2023 21:10:49</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>02/21/2023 23:08:01</publishTime>
+      <publishTime>02/23/2023 00:33:30</publishTime>
     </File>
     <File Include="Views/Home/pakageSelection.cshtml">
-      <publishTime>02/21/2023 23:39:01</publishTime>
+      <publishTime>02/23/2023 00:54:20</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>02/20/2023 21:10:49</publishTime>
@@ -574,7 +574,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/20/2023 21:10:49</publishTime>
     </File>
     <File Include="Views/Shared/_Theme.cshtml">
-      <publishTime>02/21/2023 18:10:55</publishTime>
+      <publishTime>02/23/2023 00:40:40</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>02/20/2023 21:10:49</publishTime>
@@ -583,7 +583,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/20/2023 21:10:49</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/22/2023 00:22:23</publishTime>
+      <publishTime>02/23/2023 01:01:03</publishTime>
     </File>
   </ItemGroup>
 </Project>

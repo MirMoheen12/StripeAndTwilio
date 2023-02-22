@@ -12,6 +12,14 @@ namespace StripeAndTwilio.Controllers
     public class HomeController : Controller
     {
         DbEntities db=new DbEntities();
+        public ActionResult Successfullview()
+        {
+            return View();
+        }
+        public ActionResult Paymentfailed()
+        {
+            return View();
+        }
         public ActionResult Index()
         {
             var fat = db.Customers.ToList();
@@ -65,8 +73,8 @@ namespace StripeAndTwilio.Controllers
                     },
                 },
                 Mode = "payment",
-                SuccessUrl = "https://localhost:44381/Home/Index",
-                CancelUrl = "https://localhost:44381/Home/About",
+                SuccessUrl = "https://airporttaxibook.com/Home/Successfullview",
+                CancelUrl = "https://airporttaxibook.com/Home/Paymentfailed",
             };
             var services = new Stripe.Checkout.SessionService();
             Stripe.Checkout.Session session = services.Create(options);
