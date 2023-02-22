@@ -17,9 +17,22 @@ namespace StripeAndTwilio.Controllers
             var fat = db.Customers.ToList();
             return View();
         }
-        public ActionResult pakageSelection()
+        [HttpPost]
+        public ActionResult Index(int mint = 0)
         {
-            return View();
+            //var fat = db.Customers.ToList();
+            return RedirectToAction("pakageSelection", "Home", new { mint = mint });
+        }
+        [HttpGet]
+        public ActionResult pakageSelection(int mint=12)
+        {
+            int newmint = mint / 60;
+            var data = db.Packages.ToList();
+            for (int i = 0; i < data.Count; i++)
+            {
+                data[i].Intialamount = data[i].Intialamount + newmint;
+            }
+            return View(data);
         }
         public ActionResult About()
         {
@@ -29,11 +42,6 @@ namespace StripeAndTwilio.Controllers
             return View(fat);
         }
         [HttpGet]
-        public ActionResult CreateCheckoutSession()
-        {
-            return View();
-        }
-        [HttpPost]
         public ActionResult CreateCheckoutSession(string amount)
         {
             var options = new Stripe.Checkout.SessionCreateOptions
@@ -48,12 +56,12 @@ namespace StripeAndTwilio.Controllers
                             Currency = "inr",
                             ProductData = new SessionLineItemPriceDataProductDataOptions
                             {
-                                Name = "T-Shirt"
+                                Name = "Rent"
 
                             },
 
                         },
-                        Quantity = 2,
+                        Quantity = 1,
                     },
                 },
                 Mode = "payment",
@@ -65,6 +73,7 @@ namespace StripeAndTwilio.Controllers
             Response.Headers.Add("Location", session.Url);
             return new HttpStatusCodeResult(303);
         }
+ 
 
         public ActionResult Contact()
         {
