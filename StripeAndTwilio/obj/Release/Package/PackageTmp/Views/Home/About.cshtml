@@ -1,325 +1,58 @@
-﻿
+﻿@model IEnumerable<StripeAndTwilio.Models.Customer>
+
 @{
     ViewBag.Title = "About";
     Layout = "~/Views/Shared/_Theme.cshtml";
 }
 
+<h2>About</h2>
 
-<div id="homepage-block-3" data-zs-speed="12000" data-zs-interval="7000" data-zs-bullets="false" data-zs-switchSpeed="4000" data-zs-src='["~/Content/assets/images/_homepage-3-2-bg.jpg", "~/Content/assets/images/_homepage-3-bg.jpg"]'>
-    <div class="container">
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateAndTime)
+        </th>
+        <th></th>
+    </tr>
 
-        <section class="form-taxi-short">
-            <div class="container">
-                <form class="form-validate">
-                    <h3 class="aligncenter">Get Taxi <span class="yellow">Online</span></h3>
-                    <div class="menu-types">
-                        <a href="#" data-value="1" class="type-1 active">Standart</a>
-                        <a href="#" data-value="2" class="type-2">Business</a>
-                        <a href="#" data-value="3" class="type-3 red">Vip</a>
-                        <a href="#" data-value="4" class="type-4">Bus-Minivan</a>
-                        <input type="hidden" name="type-value" class="type-value ajaxField" value="1">
-                    </div>
-                    <div class="row form-with-labels">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" name="from" value="" placeholder="From Address..." class="ajaxField required"><span class="fa fa-map-marker"></span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" name="to" value="" placeholder="To..." class="ajaxField"><span class="fa fa-map-marker"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row form-with-labels">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" name="phone" value="" placeholder="Phone Number" class="ajaxField required"><span class="fa fa-phone"></span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" name="text" value="" placeholder="Date and Time" class="ajaxField"><span class="fa fa-calendar"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <input type="submit" value="Get Taxi" class="btn btn-lg btn-yellow aligncenter">
-                    <input type="hidden" id="type" name="type" value="2" class="ajaxField">
-                </form>
-            </div>
-        </section>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateAndTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
 
-    </div>
-</div>
-<div class="homepage-block-yellow-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <h3><span class="fa fa-phone"></span> 800-5-800</h3>
-            </div>
-            <div class="col-lg-2 col-md-6  col-sm-6">
-                <h4><span class="fa fa-skype"></span> Gettaxipark</h4>
-            </div>
-            <div class="col-lg-5 col-md-6  col-sm-6">
-                <h4><span class="fa fa-map-marker"></span> 43 2-nd Avenue,  New York,  29004-7153</h4>
-            </div>
-            <div class="col-lg-2 col-md-6  col-sm-6">
-                <a href="#" class="btn btn-black-bordered btn-lg pull-right">Our Tariffs</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<section id="services">
-    <div class="container">
-        <h4 class="yellow">Welcome</h4>
-        <h2 class="h1">Our Services</h2>
-        <div class="row">
-            <div class="col-md-3 col-sm-6 col-ms-6 matchHeight">
-                <div class="image"><img src="~/Content/assets/images/_services-1.png" alt="Service"></div>
-                <h5>Rapid city transfer</h5>
-                <p>We will bring you quickly and comfortably to anywhere in your city</p>
-            </div>
-            <div class="col-md-3 col-sm-6 col-ms-6 matchHeight">
-                <div class="image"><img src="~/Content/assets/images/_services-2.png" alt="Service"></div>
-                <h5>Booking a hotel</h5>
-                <p>If you need a comfortable hotel, our operators will book it for you, and take a taxi to the address</p>
-            </div>
-            <div class="col-md-3 col-sm-6 col-ms-6 matchHeight">
-                <div class="image"><img src="~/Content/assets/images/_services-3.png" alt="Service"></div>
-                <h5>Airport transfer</h5>
-                <p>We will bring you quickly and comfortably to anywhere in your city</p>
-            </div>
-            <div class="col-md-3 col-sm-6 col-ms-6 matchHeight">
-                <div class="image"><img src="~/Content/assets/images/_services-4.png" alt="Service"></div>
-                <h5>Baggage transport</h5>
-                <p>If you need a comfortable hotel, our operators will book it for you, and take a taxi to the address</p>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="tariffs">
-    <div class="container">
-        <h4 class="yellow">See Our</h4>
-        <h2 class="h1">Tariffs</h2>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="item matchHeight">
-                    <div class="image"><img src="~/Content/assets/images/_tariff-1.png" class="full-width" alt="Tariff"></div>
-                    <h4>Standart</h4>
-                    <p>Standard sedan for a drive around the city at your service</p>
-                    <div class="price">$2<span>/km</span></div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="item matchHeight">
-                    <div class="image"><img src="~/Content/assets/images/_tariff-2.png" class="full-width" alt="Tariff"></div>
-                    <h4>Business</h4>
-                    <p>Standard sedan for a drive around the city at your service</p>
-                    <div class="price">$2,7<span>/km</span></div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="item matchHeight vip">
-                    <div class="image"><img src="~/Content/assets/images/_tariff-3.png" class="full-width" alt="Tariff"></div>
-                    <h4 class="red">Vip</h4>
-                    <p>Standard sedan for a drive around the city at your service</p>
-                    <div class="price">$5<span>/km</span></div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="item matchHeight">
-                    <div class="image"><img src="~/Content/assets/images/_tariff-4.png" class="full-width" alt="Tariff"></div>
-                    <h4>Bus-minivan</h4>
-                    <p>Standard sedan for a drive around the city at your service</p>
-                    <div class="price">$4,5<span>/km</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="download" class="parallax" style="background-image: url(~/Content/assets/images/_download-bg.jpg);">
-    <div class="container">
-        <h4 class="yellow">Get More Benefits</h4>
-        <h2 class="h1">Download The App</h2>
-        <div class="row">
-            <div class="col-md-4 col-sm-12">
-                <div class="items row">
-                    <div class="col-md-2 visible-md visible-lg"><span class="num">01.</span></div>
-                    <div class="col-md-10">
-                        <h5 class="yellow">Fast booking</h5>
-                        <p>Nam ac ligula congue, interdum enim sit amet, fermentum nisi.</p>
-                    </div>
-                    <div class="col-md-2 visible-md visible-lg"><span class="num">02.</span></div>
-                    <div class="col-md-10">
-                        <h5 class="yellow">Easy to use</h5>
-                        <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-md-push-4 col-sm-12">
-                <div class="items items-right row">
-                    <div class="col-md-10">
-                        <h5 class="yellow">GPS searching</h5>
-                        <p>Ut elementum tincidunt erat vel ornare. Suspendisse ac felis non diam pretium.</p>
-                    </div>
-                    <div class="col-md-2 visible-md visible-lg"><span class="num">03.</span></div>
-                    <div class="col-md-10">
-                        <h5 class="yellow">Bonuses for ride</h5>
-                        <p>Phasellus l et porta tortor dignissim at. Pellentesque gravida tortor at euismod mollis. </p>
-                    </div>
-                    <div class="col-md-2 visible-md visible-lg"><span class="num">04.</span></div>
-                </div>
-            </div>
-            <div class="col-md-4 col-md-pull-4 col-sm-12">
-                <div class="mob">
-                    <a href="#"><img src="~/Content/assets/images/_app-google.png" alt="App"></a>
-                    <a href="#"><img src="~/Content/assets/images/_app-apple.png" alt="App"></a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-<section id="car-block">
-    <div class="car-right animation-block"><img src="~/Content/assets/images/_car-big-side.png" alt="Car"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <h4 class="yellow">For Drivers</h4>
-                <h2 class="h1">Do You Want To Earn With Us?</h2>
-            </div>
-            <div class="col-md-6">
-                <p>Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur dapibus pulvinar, sapien eros sodales ante, euismod aliquet nulla metus a mauris. </p>
-
-                <ul class="check two-col strong">
-                    <li>Luxury cars</li>
-                    <li>No fee</li>
-                    <li>Weekly payment</li>
-                    <li>Fixed price</li>
-                    <li>Good application</li>
-                    <li>Stable orders</li>
-                </ul>
-
-                <a href="#" class="btn btn-yellow btn-lg btn-white">Become a Driver</a>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="testimonials">
-    <hr class="lg">
-    <div class="container">
-        <h4 class="yellow">Happy Client's</h4>
-        <h2 class="h1">Testimonials</h2>
-
-        <div class="swiper-container row" id="testimonials-slider">
-            <div class="swiper-wrapper">
-                <div class="col-md-4 col-sm-6 swiper-slide">
-                    <div class="inner matchHeight">
-                        <div class="text">
-                            <p>Nullam orci dui, dictum et magna sollicitudin, tempor blandit erat. Maecenas suscipit tellus sit amet augue placerat fringilla a id lacus. Fusce tincidunt in leo lacinia condimentum.</p>
-                        </div>
-                        <div class="quote">
-                            <span class="fa fa-quote-left"></span>
-                            <div class="name">Anastasia Stone</div>
-                            <img src="~/Content/assets/images/_client-1.jpg" alt="Client">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 swiper-slide">
-                    <div class="inner matchHeight">
-                        <div class="text">
-                            <p>Suspendisse nec arcu sed nibh lacinia pretium. Phasellus eros ligula, mattis id rutrum non, eleifend vitae lacus. </p>
-                        </div>
-                        <div class="quote">
-                            <span class="fa fa-quote-left"></span>
-                            <div class="name">Steven Rashford</div>
-                            <img src="~/Content/assets/images/_client-4.jpg" alt="Client">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 swiper-slide">
-                    <div class="inner matchHeight">
-                        <div class="text">
-                            <p>Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur dapibus pulvinar, sapien eros sodales ante, euismod aliquet nulla metus a mauris. </p>
-                        </div>
-                        <div class="quote">
-                            <span class="fa fa-quote-left"></span>
-                            <div class="name">Patrick James</div>
-                            <img src="~/Content/assets/images/_client-5.jpg" alt="Client">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 swiper-slide">
-                    <div class="inner matchHeight">
-                        <div class="text">
-                            <p>Nullam orci dui, dictum et magna sollicitudin, tempor blandit erat. Maecenas suscipit tellus sit amet augue placerat fringilla a id lacus. Fusce tincidunt in leo lacinia condimentum.</p>
-                        </div>
-                        <div class="quote">
-                            <span class="fa fa-quote-left"></span>
-                            <div class="name">Anastasia Stone</div>
-                            <img src="~/Content/assets/images/_client-1.jpg" alt="Client">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 swiper-slide">
-                    <div class="inner matchHeight">
-                        <div class="text">
-                            <p>Suspendisse nec arcu sed nibh lacinia pretium. Phasellus eros ligula, mattis id rutrum non, eleifend vitae lacus. </p>
-                        </div>
-                        <div class="quote">
-                            <span class="fa fa-quote-left"></span>
-                            <div class="name">Steven Rashford</div>
-                            <img src="~/Content/assets/images/_client-4.jpg" alt="Client">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 swiper-slide">
-                    <div class="inner matchHeight">
-                        <div class="text">
-                            <p>Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur dapibus pulvinar, sapien eros sodales ante, euismod aliquet nulla metus a mauris. </p>
-                        </div>
-                        <div class="quote">
-                            <span class="fa fa-quote-left"></span>
-                            <div class="name">Patrick James</div>
-                            <img src="~/Content/assets/images/_client-5.jpg" alt="Client">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="arrows">
-                <a href="#" class="arrow-left fa fa-caret-left"></a>
-                <a href="#" class="arrow-right fa fa-caret-right"></a>
-            </div>
-        </div>
-    </div>
-</section>
-<div id="homepage-banners">
-    <div class="container">
-        <div class="row">
-            <a href="#" class="col-md-6 col-sm-6 col-ms-6"><img src="~/Content/assets/images/_banner-1.png" class="full-width" alt="Banner"></a>
-            <a href="#" class="col-md-6 col-sm-6 col-ms-6"><img src="~/Content/assets/images/_banner-2.png" class="full-width" alt="Banner"></a>
-        </div>
-    </div>
-</div>
-
-<section id="partners">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-12">
-                <h4 class="black margin-0">Our partners</h4>
-                <h2 class="white margin-0">and clients</h2>
-            </div>
-            <div class="col-md-9 col-sm-12">
-                <div class="row items">
-                    <div class="col-md-5ths col-sm-3 col-ms-4 col-xs-6"><a href="#"><img src="~/Content/assets/images/_partner-1.png" alt="Partner"></a></div>
-                    <div class="col-md-5ths col-sm-3 col-ms-4 col-xs-6"><a href="#"><img src="~/Content/assets/images/_partner-2.png" alt="Partner"></a></div>
-                    <div class="col-md-5ths col-sm-3 col-ms-4 col-xs-6"><a href="#"><img src="~/Content/assets/images/_partner-3.png" alt="Partner"></a></div>
-                    <div class="col-md-5ths col-sm-3 col-ms-4 col-xs-6"><a href="#"><img src="~/Content/assets/images/_partner-4.png" alt="Partner"></a></div>
-                    <div class="col-md-5ths col-sm-3 col-ms-4 col-xs-6"><a href="#"><img src="~/Content/assets/images/_partner-5.png" alt="Partner"></a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
+</table>

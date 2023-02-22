@@ -221,10 +221,6 @@
     <Content Include="Content\assets\images\_homepage-1-bg.jpg" />
     <Content Include="Content\assets\images\_homepage-3-2-bg.jpg" />
     <Content Include="Content\assets\images\_homepage-3-bg.jpg" />
-    <Content Include="Content\assets\images\_icon-car-1.png" />
-    <Content Include="Content\assets\images\_icon-car-2.png" />
-    <Content Include="Content\assets\images\_icon-car-3.png" />
-    <Content Include="Content\assets\images\_icon-car-4.png" />
     <Content Include="Content\assets\images\_inner-bg.jpg" />
     <Content Include="Content\assets\images\_insta-1.jpg" />
     <Content Include="Content\assets\images\_insta-2.jpg" />

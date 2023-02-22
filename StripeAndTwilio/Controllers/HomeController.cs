@@ -26,7 +26,7 @@ namespace StripeAndTwilio.Controllers
             var fat = db.Customers.ToList();
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return View(fat);
         }
         [HttpGet]
         public ActionResult CreateCheckoutSession()
