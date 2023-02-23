@@ -4,34 +4,40 @@
     Layout = "~/Views/Shared/_Theme.cshtml";
 }
 
-<h2 class="text-center">Select Your Package</h2>
+<h2 class="text-center">Choose your vehicle</h2>
+
 @foreach (var item in Model)
 {
     <br />
-    <div class="container" style="background-color: #FFC61A;border-radius:10PX">
+    <div class="container" style="border:solid 1px; border-radius:10PX">
         <h3 class="text-center" style="margin-top:10px !important">@item.PackageName</h3>
+
         <div class="row">
-            <div class="col-xs-6 col-md-3"><p style="margin-top:0px !important">Price</p></div>
-            <div class="col-xs-6 col-md-3"><h5 style="margin-top:0px !important">@item.Intialamount $</h5></div>
-            <div class="col-xs-6 col-md-3"><p style="margin-top:0px !important">Person</p></div>
-            <div class="col-xs-6 col-md-3"><h5 style="margin-top:0px !important">Up to @item.Person</h5></div>
+
+            <div class="col-xs-6 col-md-3">
+                <img src="~/Content/assets/images/SEDAN.jpg" style="width:100%" />
+
+
+            </div>
+            <div class="col-xs-3 col-md-2"><p style="margin-top:0px !important">Price</p></div>
+            <div class="col-xs-3 col-md-2"><p style="margin-top:0px !important">@item.Intialamount $</p></div>
+            <div class="col-xs-3 col-md-2"><p style="margin-top:0px !important">Person</p></div>
+            <div class="col-xs-3 col-md-2"><p style="margin-top:0px !important">@item.Person</p></div>
+            <div class="col-xs-3 col-md-2"><p style="margin-top:0px !important">Bags</p></div>
+            <div class="col-xs-3 col-md-2"><p style="margin-top:0px !important">@item.Bags</p></div>
+        
+            <div class="col-xs-12 col-md-offset-2 col-md-2"><p style="margin-top:0px !important">
+                                               <a href="@Url.Action("CreateCheckoutSession","Home",new {amount=item.Intialamount.ToString()})" class="btn btn-sm aligncenter" style="background-color: rgb(72, 169, 70); padding-top: 15PX; margin-bottom: -1em !important; padding-bottom: 15PX"><span> Book Now</span></a>
+                  </p></div>
             @*<div class="col-sm-3"><p style="margin-top:0px !important">Person</p></div>
-                <div class="col-sm-3"><h5 style="margin-top:0px !important">Up to 3</h5></div>*@
+        <div class="col-sm-3"><h5 style="margin-top:0px !important">Up to 3</h5></div>*@
         </div>
         <div class="row">
-            <div class="col-xs-6 col-md-3"><p style="margin-top:0px !important">Bage</p></div>
-            <div class="col-xs-6 col-md-3"><h5 style="margin-top:0px !important">Up to @item.Bags</h5></div>
-            <div class="col-md-6 col-md-3"><p style="margin-top:0px !important">Driver will meet your arival</p></div>
-            <div class="col-md-3 col-md-3"><p style="margin-top:0px !important">Free cancelltion</p></div>
-
-
+            <div class="col-md-6 col-sm-12"><p style="margin-top:0px !important">Driver will meet your arival</p></div>
+            <div class="col-md-6 col-sm-12"><p style="margin-top:0px !important">Free cancelltion</p></div>
         </div>
 
-        <div class="col-md-3">
 
-
-            <a href="@Url.Action("CreateCheckoutSession","Home",new {amount=item.Intialamount.ToString()})" class="btn btn-primary aligncenter" style="padding-top: 15PX; margin-bottom: -1em !important; padding-bottom: 15PX"><span> Book Now</span></a>
-        </div>
         @*<div class="row">
 
                 <div class="col-sm-12" >

@@ -52,6 +52,14 @@ namespace StripeAndTwilio.Controllers
         [HttpGet]
         public ActionResult CreateCheckoutSession(string amount)
         {
+            ViewBag.Amount = amount;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateCheckoutSession(Customer customer)
+        {
+            db.Customers.Add(customer);
+            db.SaveChanges();
             var options = new Stripe.Checkout.SessionCreateOptions
             {
                 LineItems = new List<SessionLineItemOptions>
@@ -60,7 +68,7 @@ namespace StripeAndTwilio.Controllers
                     {
                         PriceData = new SessionLineItemPriceDataOptions
                         {
-                            UnitAmount = Convert.ToInt32(amount) * 100,
+                            UnitAmount = Convert.ToInt32(customer.Amount) * 100,
                             Currency = "GBP",
                             ProductData = new SessionLineItemPriceDataProductDataOptions
                             {

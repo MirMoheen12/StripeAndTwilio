@@ -191,6 +191,7 @@
     <Content Include="Content\assets\images\location-black.png" />
     <Content Include="Content\assets\images\logo-inner.png" />
     <Content Include="Content\assets\images\logo.png" />
+    <Content Include="Content\assets\images\SEDAN.jpg" />
     <Content Include="Content\assets\images\small.png" />
     <Content Include="Content\assets\images\swipebox\icons.png" />
     <Content Include="Content\assets\images\swipebox\icons.svg" />
