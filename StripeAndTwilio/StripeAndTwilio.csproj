@@ -185,13 +185,17 @@
     <Content Include="Content\assets\css\welcome.css" />
     <Content Include="Content\assets\css\zoomslider.css" />
     <Content Include="Content\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\assets\images\bus.png" />
+    <Content Include="Content\assets\images\business.png" />
     <Content Include="Content\assets\images\favicon.png" />
     <Content Include="Content\assets\images\location-black.png" />
     <Content Include="Content\assets\images\logo-inner.png" />
     <Content Include="Content\assets\images\logo.png" />
+    <Content Include="Content\assets\images\small.png" />
     <Content Include="Content\assets\images\swipebox\icons.png" />
     <Content Include="Content\assets\images\swipebox\icons.svg" />
     <Content Include="Content\assets\images\swipebox\loader.gif" />
+    <Content Include="Content\assets\images\vip.png" />
     <Content Include="Content\assets\images\_app-apple.png" />
     <Content Include="Content\assets\images\_app-bg.png" />
     <Content Include="Content\assets\images\_app-google.png" />
@@ -283,6 +287,10 @@
     <Content Include="Content\assets\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\assets\fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\airporttaxibook - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -312,6 +320,7 @@
     <Content Include="Views\Shared\_Theme.cshtml" />
     <Content Include="Views\Home\pakageSelection.cshtml" />
     <Content Include="Views\Home\Successfullview.cshtml" />
+    <Content Include="Views\Home\Paymentfailed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

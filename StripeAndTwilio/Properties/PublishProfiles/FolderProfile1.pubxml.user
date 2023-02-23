@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>D:\Taxi</_PublishTargetUrl>
-    <History>True|2023-02-22T20:01:03.9646724Z;True|2023-02-22T00:34:04.9303768+05:00;True|2023-02-22T00:33:31.7736859+05:00;True|2023-02-22T00:23:45.3852335+05:00;False|2023-02-22T00:22:24.1029163+05:00;</History>
+    <History>True|2023-02-22T20:22:35.3747075Z;True|2023-02-23T01:01:03.9646724+05:00;True|2023-02-22T00:34:04.9303768+05:00;True|2023-02-22T00:33:31.7736859+05:00;True|2023-02-22T00:23:45.3852335+05:00;False|2023-02-22T00:22:24.1029163+05:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -187,10 +187,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/20/2023 21:10:56</publishTime>
     </File>
     <File Include="bin/StripeAndTwilio.dll">
-      <publishTime>02/23/2023 01:01:01</publishTime>
+      <publishTime>02/23/2023 20:10:17</publishTime>
     </File>
     <File Include="bin/StripeAndTwilio.pdb">
-      <publishTime>02/23/2023 01:01:01</publishTime>
+      <publishTime>02/23/2023 20:10:17</publishTime>
     </File>
     <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
       <publishTime>02/20/2023 21:10:56</publishTime>
@@ -567,6 +567,12 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Home/pakageSelection.cshtml">
       <publishTime>02/23/2023 00:54:20</publishTime>
     </File>
+    <File Include="Views/Home/Paymentfailed.cshtml">
+      <publishTime>02/23/2023 02:15:24</publishTime>
+    </File>
+    <File Include="Views/Home/Successfullview.cshtml">
+      <publishTime>02/23/2023 01:16:11</publishTime>
+    </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>02/20/2023 21:10:49</publishTime>
     </File>
@@ -583,7 +589,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/20/2023 21:10:49</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/23/2023 01:01:03</publishTime>
+      <publishTime>02/23/2023 20:10:18</publishTime>
     </File>
   </ItemGroup>
 </Project>

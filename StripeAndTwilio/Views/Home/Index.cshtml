@@ -11,13 +11,13 @@
             <div class="container">
                 <form id="distance_form">
                     <h3 class="aligncenter">Get Taxi <span class="yellow">Online</span></h3>
-                    <div class="menu-types">
-                        <a href="#" data-value="1" class="type-1 active">Standart</a>
-                        <a href="#" data-value="2" class="type-2">Business</a>
-                        <a href="#" data-value="3" class="type-3 red">Vip</a>
-                        <a href="#" data-value="4" class="type-4">Bus-Minivan</a>
+                    @*<div class="menu-types row" >
+                        <a href="#" data-value="1" class="type-1 active col-xs-2">Standart</a>
+                        <a href="#" data-value="2" class="type-2 col-xs-2">Business</a>
+                        <a href="#" data-value="3" class="type-3 red col-xs-2">Vip</a>
+                        <a href="#" data-value="4" class="type-4 col-xs-2">Bus-Minivan</a>
                         <input type="hidden" name="type-value" class="type-value ajaxField" value="1">
-                    </div>
+                    </div>*@
                     <div class="row form-with-labels">
                    
                         <div class="row form-with-labels">
@@ -37,13 +37,27 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
+                                <div style=" text-align: left;">Select date</div>
                                 <div class="form-group">
-                                    <input type="number" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="phone" value="" placeholder="Total Number" min="0" class="ajaxField required">
+
+                                    <input type="date" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="text" value="" class="ajaxField required">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div style=" text-align: left;">Select time</div>
+                                <div class="form-group">
+                                    <input type="time" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="text" value="" class="ajaxField required">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="datetime-local" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="text" value="" class="ajaxField required">
+                                    <input type="number" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="phone" value="" placeholder="Passenger" min="0" class="ajaxField required">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="number" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="text" value="" placeholder="Luggage" class="ajaxField required">
                                 </div>
                             </div>
 
@@ -152,49 +166,6 @@
                     <div class="price">$4,5<span>/km</span></div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section id="download" class="parallax" style="background-image: url(~/Content/assets/images/_download-bg.jpg);">
-    <div class="container">
-        <h4 class="yellow">Get More Benefits</h4>
-        <h2 class="h1">Download The App</h2>
-        <div class="row">
-            <div class="col-md-4 col-sm-12">
-                <div class="items row">
-                    <div class="col-md-2 visible-md visible-lg"><span class="num">01.</span></div>
-                    <div class="col-md-10">
-                        <h5 class="yellow">Fast booking</h5>
-                        <p>Nam ac ligula congue, interdum enim sit amet, fermentum nisi.</p>
-                    </div>
-                    <div class="col-md-2 visible-md visible-lg"><span class="num">02.</span></div>
-                    <div class="col-md-10">
-                        <h5 class="yellow">Easy to use</h5>
-                        <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-md-push-4 col-sm-12">
-                <div class="items items-right row">
-                    <div class="col-md-10">
-                        <h5 class="yellow">GPS searching</h5>
-                        <p>Ut elementum tincidunt erat vel ornare. Suspendisse ac felis non diam pretium.</p>
-                    </div>
-                    <div class="col-md-2 visible-md visible-lg"><span class="num">03.</span></div>
-                    <div class="col-md-10">
-                        <h5 class="yellow">Bonuses for ride</h5>
-                        <p>Phasellus l et porta tortor dignissim at. Pellentesque gravida tortor at euismod mollis. </p>
-                    </div>
-                    <div class="col-md-2 visible-md visible-lg"><span class="num">04.</span></div>
-                </div>
-            </div>
-            <div class="col-md-4 col-md-pull-4 col-sm-12">
-                <div class="mob">
-                    <a href="#"><img src="~/Content/assets/images/_app-google.png" alt="App"></a>
-                    <a href="#"><img src="~/Content/assets/images/_app-apple.png" alt="App"></a>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>

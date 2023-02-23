@@ -61,7 +61,7 @@ namespace StripeAndTwilio.Controllers
                         PriceData = new SessionLineItemPriceDataOptions
                         {
                             UnitAmount = Convert.ToInt32(amount) * 100,
-                            Currency = "inr",
+                            Currency = "GBP",
                             ProductData = new SessionLineItemPriceDataProductDataOptions
                             {
                                 Name = "Rent"
@@ -73,8 +73,9 @@ namespace StripeAndTwilio.Controllers
                     },
                 },
                 Mode = "payment",
-                SuccessUrl = "https://airporttaxibook.com/Home/Successfullview",
-                CancelUrl = "https://airporttaxibook.com/Home/Paymentfailed",
+                SuccessUrl = "https://airporttaxibook.azurewebsites.net/Home/Successfullview",
+
+                CancelUrl = "https://airporttaxibook.azurewebsites.net/Home/Paymentfailed",
             };
             var services = new Stripe.Checkout.SessionService();
             Stripe.Checkout.Session session = services.Create(options);
