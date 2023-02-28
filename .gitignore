@@ -4,3 +4,6 @@
 
 *.vsidx
 /.vs/StripeAndTwilio/v17/.suo
+/StripeAndTwilio/bin/StripeAndTwilio.dll
+/StripeAndTwilio/obj/Debug/StripeAndTwilio.dll
+/StripeAndTwilio/bin/StripeAndTwilio.pdb
