@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountsideController.cs" />
     <Compile Include="Controllers\AdminSideController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -865,6 +866,7 @@
     <Content Include="Views\Home\Paymentfailed.cshtml" />
     <Content Include="Views\Shared\AdminTheme.cshtml" />
     <Content Include="Views\AdminSide\Index.cshtml" />
+    <Content Include="Views\Accountside\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
