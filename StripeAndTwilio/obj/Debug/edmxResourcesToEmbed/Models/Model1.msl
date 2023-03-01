@@ -33,5 +33,36 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ConfirmOrders">
+      <EntityTypeMapping TypeName="StripeIntegerationModel.ConfirmOrder">
+        <MappingFragment StoreEntitySet="ConfirmOrder">
+          <ScalarProperty Name="Sid" ColumnName="Sid" />
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Coid" ColumnName="Coid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orderinfoes">
+      <EntityTypeMapping TypeName="StripeIntegerationModel.Orderinfo">
+        <MappingFragment StoreEntitySet="Orderinfo">
+          <ScalarProperty Name="DropOffloc" ColumnName="DropOffloc" />
+          <ScalarProperty Name="Pickupplace" ColumnName="Pickupplace" />
+          <ScalarProperty Name="Pickuptime" ColumnName="Pickuptime" />
+          <ScalarProperty Name="ODate" ColumnName="ODate" />
+          <ScalarProperty Name="ONumber" ColumnName="ONumber" />
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="StripeIntegerationModel.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="SContact" ColumnName="SContact" />
+          <ScalarProperty Name="SEmail" ColumnName="SEmail" />
+          <ScalarProperty Name="SName" ColumnName="SName" />
+          <ScalarProperty Name="Sid" ColumnName="Sid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

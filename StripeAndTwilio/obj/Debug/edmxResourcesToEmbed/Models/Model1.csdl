@@ -14,6 +14,17 @@
     <EntitySet Name="Customers" EntityType="Self.Customer" />
     <EntitySet Name="Packages" EntityType="StripeIntegerationModel.Package" />
     <EntitySet Name="AllUsers" EntityType="StripeIntegerationModel.AllUser" />
+    <EntitySet Name="ConfirmOrders" EntityType="StripeIntegerationModel.ConfirmOrder" />
+    <EntitySet Name="Orderinfoes" EntityType="StripeIntegerationModel.Orderinfo" />
+    <EntitySet Name="Suppliers" EntityType="StripeIntegerationModel.Supplier" />
+    <AssociationSet Name="FK__ConfirmOrde__Oid__46E78A0C" Association="StripeIntegerationModel.FK__ConfirmOrde__Oid__46E78A0C">
+      <End Role="Orderinfo" EntitySet="Orderinfoes" />
+      <End Role="ConfirmOrder" EntitySet="ConfirmOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ConfirmOrde__Sid__47DBAE45" Association="StripeIntegerationModel.FK__ConfirmOrde__Sid__47DBAE45">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="ConfirmOrder" EntitySet="ConfirmOrders" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Package">
     <Key>
@@ -34,4 +45,60 @@
     <Property Name="UserEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="UserPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
+  <EntityType Name="ConfirmOrder">
+    <Key>
+      <PropertyRef Name="Coid" />
+    </Key>
+    <Property Name="Coid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Oid" Type="Int32" />
+    <Property Name="Sid" Type="Int32" />
+    <NavigationProperty Name="Orderinfo" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Oid__46E78A0C" FromRole="ConfirmOrder" ToRole="Orderinfo" />
+    <NavigationProperty Name="Supplier" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Sid__47DBAE45" FromRole="ConfirmOrder" ToRole="Supplier" />
+  </EntityType>
+  <EntityType Name="Orderinfo">
+    <Key>
+      <PropertyRef Name="Oid" />
+    </Key>
+    <Property Name="Oid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ONumber" Type="Int32" />
+    <Property Name="ODate" Type="DateTime" Precision="3" />
+    <Property Name="Pickuptime" Type="DateTime" Precision="3" />
+    <Property Name="Pickupplace" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DropOffloc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ConfirmOrders" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Oid__46E78A0C" FromRole="Orderinfo" ToRole="ConfirmOrder" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Sid" />
+    </Key>
+    <Property Name="Sid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SContact" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ConfirmOrders" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Sid__47DBAE45" FromRole="Supplier" ToRole="ConfirmOrder" />
+  </EntityType>
+  <Association Name="FK__ConfirmOrde__Oid__46E78A0C">
+    <End Type="StripeIntegerationModel.Orderinfo" Role="Orderinfo" Multiplicity="0..1" />
+    <End Type="StripeIntegerationModel.ConfirmOrder" Role="ConfirmOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orderinfo">
+        <PropertyRef Name="Oid" />
+      </Principal>
+      <Dependent Role="ConfirmOrder">
+        <PropertyRef Name="Oid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ConfirmOrde__Sid__47DBAE45">
+    <End Type="StripeIntegerationModel.Supplier" Role="Supplier" Multiplicity="0..1" />
+    <End Type="StripeIntegerationModel.ConfirmOrder" Role="ConfirmOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Sid" />
+      </Principal>
+      <Dependent Role="ConfirmOrder">
+        <PropertyRef Name="Sid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
