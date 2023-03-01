@@ -153,88 +153,88 @@ function initSwiper() {
 
 }
 
-///* Masonry initialization */
-//function initMasonry() {
+/* Masonry initialization */
+function initMasonry() {
 
-//	$('.masonry').masonry({
-//	  itemSelector: '.item',
-//	  columnWidth:  '.item'
-//	});		
-//}
+	$('.masonry').masonry({
+	  itemSelector: '.item',
+	  columnWidth:  '.item'
+	});		
+}
 
-///* Animated progress bar */
-//function initProgressBar() {
+/* Animated progress bar */
+function initProgressBar() {
 
-//	var block = $('.progressItems');
+	var block = $('.progressItems');
 
-//    if (block.length) {
+    if (block.length) {
 
-//	    var scrollTop = block.offset().top - window.innerHeight;
+	    var scrollTop = block.offset().top - window.innerHeight;
 
-//	    if (!block.data('counted') && $(window).scrollTop() > scrollTop) {
+	    if (!block.data('counted') && $(window).scrollTop() > scrollTop) {
 
-//	    	/* Initialized once */
-//			$('.progressBar').each(function(i, el) {
-//				progressBar(parseInt($(el).find('.value').html(), 10), $(el));
-//			});
+	    	/* Initialized once */
+			$('.progressBar').each(function(i, el) {
+				progressBar(parseInt($(el).find('.value').html(), 10), $(el));
+			});
 
-//	    	block.data('counted', 1);
-//	    }  
-//	}
-//}
+	    	block.data('counted', 1);
+	    }  
+	}
+}
 
-//function progressBar(percent, $element) {
-//    var progressBarWidth = percent * $element.width() / 100;
-//    $element.find('.bar div').animate({ width: progressBarWidth }, 1000);
-//}
+function progressBar(percent, $element) {
+    var progressBarWidth = percent * $element.width() / 100;
+    $element.find('.bar div').animate({ width: progressBarWidth }, 1000);
+}
 
-///* Scroll animation used for landing page */
-//function checkScrollAnimation() {
+/* Scroll animation used for landing page */
+function checkScrollAnimation() {
 
-//	var scrollBlock = $('#car-block');
-//    if (scrollBlock.length) {
+	var scrollBlock = $('#car-block');
+    if (scrollBlock.length) {
 
-//	    var scrollTop = scrollBlock.offset().top - window.innerHeight;
+	    var scrollTop = scrollBlock.offset().top - window.innerHeight;
 
-//	    if (!scrollBlock.data('done') && $(window).scrollTop() > scrollTop) {
+	    if (!scrollBlock.data('done') && $(window).scrollTop() > scrollTop) {
 
-//	    	$('#car-block .animation-block img').addClass('slideleft');
-//	    	scrollBlock.data('done', 1);
-//	    }  
-//	}
-//}
+	    	$('#car-block .animation-block img').addClass('slideleft');
+	    	scrollBlock.data('done', 1);
+	    }  
+	}
+}
 
-///* Starting countUp function on landing page */
-//function checkCountUp() {
+/* Starting countUp function on landing page */
+function checkCountUp() {
 
-//	var countBlock = $('.skills');
-//    if (countBlock.length) {
+	var countBlock = $('.skills');
+    if (countBlock.length) {
 
-//	    var scrollTop = countBlock.offset().top - window.innerHeight;
+	    var scrollTop = countBlock.offset().top - window.innerHeight;
 
-//	    if (!countBlock.data('counted') && $(window).scrollTop() > scrollTop) {
+	    if (!countBlock.data('counted') && $(window).scrollTop() > scrollTop) {
 
-//	    	/* Initialized once */
-//	    	for (var x = 1; x <= 4; x++) {
+	    	/* Initialized once */
+	    	for (var x = 1; x <= 4; x++) {
 
-//				var numAnim = new CountUp('countUp-' + x, 1, $('#countUp-' + x).html());
-//				numAnim.start();
-//	    	}
+				var numAnim = new CountUp('countUp-' + x, 1, $('#countUp-' + x).html());
+				numAnim.start();
+	    	}
 
-//	    	countBlock.data('counted', 1);
-//	    }  
-//	}
-//}
+	    	countBlock.data('counted', 1);
+	    }  
+	}
+}
 
-///* Navbar is set darker on main page on scroll */
-//function checkNavbar() {
+/* Navbar is set darker on main page on scroll */
+function checkNavbar() {
 
-//	var scroll = $(window).scrollTop(),
-//    	navBar = $('nav.navbar'),
-//	    slideDiv = $('.slider-full');
+	var scroll = $(window).scrollTop(),
+    	navBar = $('nav.navbar'),
+	    slideDiv = $('.slider-full');
 
-//    if (scroll > 1) navBar.addClass('dark'); else navBar.removeClass('dark');
-//}
+    if (scroll > 1) navBar.addClass('dark'); else navBar.removeClass('dark');
+}
 
 /* Ajax Contact Form */
 //function initContactForm() { 
