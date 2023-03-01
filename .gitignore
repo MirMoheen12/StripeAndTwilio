@@ -7,3 +7,9 @@
 /StripeAndTwilio/bin/StripeAndTwilio.dll
 /StripeAndTwilio/obj/Debug/StripeAndTwilio.dll
 /StripeAndTwilio/bin/StripeAndTwilio.pdb
+/StripeAndTwilio/Web.config
+/StripeAndTwilio/obj/Release/TransformWebConfig/original/Web.config
+/StripeAndTwilio/obj/Release/CSAutoParameterize/original/Web.config
+/StripeAndTwilio/obj/Release/CSAutoParameterize/transformed/Web.config
+/StripeAndTwilio/obj/Release/TransformWebConfig/transformed/Web.config
+/StripeAndTwilio/obj/Release/Package/PackageTmp/Web.config
