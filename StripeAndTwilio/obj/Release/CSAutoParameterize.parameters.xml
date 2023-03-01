@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="DbEntities-Web.config Connection String" description="DbEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-3JTT0S9\SQLEXPRESS;initial catalog=TaxiBooking;user id=MirUser;password=Admin@123;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+  <parameter name="DbEntities-Web.config Connection String" description="DbEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=mirserver.database.windows.net;initial catalog=TaxiBooking;user id=mirserver;password=Fytgr6yf;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\mirmo\\source\\repos\\MirMoheen12\\StripeAndTwilio\\StripeAndTwilio\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DbEntities']/@connectionString" />
   </parameter>
 </parameters>
