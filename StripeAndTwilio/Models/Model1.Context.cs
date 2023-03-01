@@ -28,5 +28,8 @@ namespace StripeAndTwilio.Models
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Package> Packages { get; set; }
         public virtual DbSet<AllUser> AllUsers { get; set; }
+        public virtual DbSet<ConfirmOrder> ConfirmOrders { get; set; }
+        public virtual DbSet<Orderinfo> Orderinfoes { get; set; }
+        public virtual DbSet<Supplier> Suppliers { get; set; }
     }
 }

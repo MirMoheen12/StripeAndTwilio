@@ -7,6 +7,7 @@
       <Diagram DiagramId="39a863d37c0b42158110799f5be8edb1" Name="Diagram1">
         <EntityTypeShape EntityType="StripeIntegerationModel.Customer" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="StripeIntegerationModel.Package" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StripeIntegerationModel.AllUser" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

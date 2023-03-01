@@ -23,5 +23,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="AllUsers">
+      <EntityTypeMapping TypeName="StripeIntegerationModel.AllUser">
+        <MappingFragment StoreEntitySet="AllUsers">
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
