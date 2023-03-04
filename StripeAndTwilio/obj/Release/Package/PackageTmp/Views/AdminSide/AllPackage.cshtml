@@ -1,0 +1,62 @@
+﻿@model IEnumerable<StripeAndTwilio.Models.Package>
+
+@{
+    ViewBag.Title = "AllPackage";
+    Layout = "~/Views/Shared/AdminTheme.cshtml";
+}
+
+
+<div class="nk-block nk-block-lg">
+    <div class="nk-block-head">
+        <div class="nk-block-head-content">
+            <h4 class="nk-block-title">All Pacakegs</h4>
+        
+        </div>
+    </div>
+    <div class="card card-preview">
+        <div class="card-inner">
+            <table class="datatable-init-export nowrap table">
+                <thead>
+                    <tr>
+                        <th> Package Name</th>
+                        <th>Affordable Person</th>
+                        <th>Bags</th>
+                        <th>Intial Ammount</th>
+                       <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                 
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PackageName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Bags)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Intialamount)
+                    </td>
+                    <td>
+                        <a href="~/AdminSide/UpdatePackage?id=@item.PID">
+                            <em class="icon ni ni-edit"></em>
+                        </a>
+                       
+                      
+                    </td>
+                    </tr>
+                }
+                    </tbody>
+
+                </table>
+        </div>
+    </div><!-- .card-preview -->
+</div>
+
+
