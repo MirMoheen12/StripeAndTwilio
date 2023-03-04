@@ -22,6 +22,7 @@ namespace StripeAndTwilio.Controllers
             var data = db.AllUsers.Where(x => x.Username == allUser.Username && x.UserPassword == allUser.UserPassword).FirstOrDefault();
             if (data != null)
             {
+                Session["Admin"] = "Active";
                 return RedirectToAction("Index", "AdminSide");
             }
             return View();

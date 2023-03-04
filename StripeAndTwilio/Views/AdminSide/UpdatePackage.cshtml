@@ -1,0 +1,68 @@
+﻿@model StripeAndTwilio.Models.Package
+
+@{
+    ViewBag.Title = "UpdatePackage";
+    Layout = "~/Views/Shared/AdminTheme.cshtml";
+}
+<div class="nk-block nk-block-lg">
+    <div class="nk-block-head">
+        <div class="nk-block-head-content">
+            <h4 class="title nk-block-title">Package Details</h4>
+            <div class="nk-block-des">
+              </div>
+        </div>
+    </div>
+    <div class="card card-bordered">
+        <div class="card-inner">
+            <div class="card-head">
+            
+            </div>
+            <form method="post" action="~/AdminSide/UpdatePackage">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                     
+                        @Html.EditorFor(model => model.PID, new { htmlAttributes = new { @class = "form-control" , @style = "display:none" } })
+                        <div class="form-group">
+                            <label class="form-label" for="full-name-1">Pacakage Name</label>
+                            <div class="form-control-wrap">
+                                @Html.EditorFor(model => model.PackageName, new { htmlAttributes = new { @class = "form-control" } })
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-label" for="email-address-1">Person</label>
+                            <div class="form-control-wrap">
+                                @Html.EditorFor(model => model.Person, new { htmlAttributes = new { @class = "form-control" } })
+                           
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-label" for="phone-no-1">Bags</label>
+                            <div class="form-control-wrap">
+                                @Html.EditorFor(model => model.Bags, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="form-label" for="pay-amount-1">Amount</label>
+                            <div class="form-control-wrap">
+                                @Html.EditorFor(model => model.Intialamount, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                    </div>
+   
+                    <div class="col-12">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-lg btn-primary">Save Informations</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div><!-- .nk-block -->
