@@ -90,8 +90,20 @@ namespace StripeAndTwilio.Controllers
             Response.Headers.Add("Location", session.Url);
             return new HttpStatusCodeResult(303);
         }
- 
+        public ActionResult PrivacyPloicy()
+        {
+            return View();
+        }
 
+
+        public ActionResult Termscondition()
+        {
+            return View();
+        }
+        public ActionResult cancellationpolicy()
+        {
+            return View();
+        }
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

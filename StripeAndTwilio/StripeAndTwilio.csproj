@@ -882,6 +882,9 @@
     <Content Include="Views\AdminSide\PackageCreation.cshtml" />
     <Content Include="Views\AdminSide\AllPackage.cshtml" />
     <Content Include="Views\AdminSide\UpdatePackage.cshtml" />
+    <Content Include="Views\Home\PrivacyPloicy.cshtml" />
+    <Content Include="Views\Home\Termscondition.cshtml" />
+    <Content Include="Views\Home\cancellationpolicy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
