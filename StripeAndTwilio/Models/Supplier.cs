@@ -24,8 +24,10 @@ namespace StripeAndTwilio.Models
         public string SName { get; set; }
         public string SEmail { get; set; }
         public string SContact { get; set; }
+        public Nullable<int> refno { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ConfirmOrder> ConfirmOrders { get; set; }
+        public virtual Orderinfo Orderinfo { get; set; }
     }
 }

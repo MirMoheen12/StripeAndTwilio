@@ -18,6 +18,7 @@ namespace StripeAndTwilio.Models
         public Orderinfo()
         {
             this.ConfirmOrders = new HashSet<ConfirmOrder>();
+            this.Suppliers = new HashSet<Supplier>();
         }
     
         public int Oid { get; set; }
@@ -30,5 +31,7 @@ namespace StripeAndTwilio.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ConfirmOrder> ConfirmOrders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Supplier> Suppliers { get; set; }
     }
 }

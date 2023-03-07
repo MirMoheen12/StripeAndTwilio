@@ -1,0 +1,96 @@
+﻿@model IEnumerable<StripeAndTwilio.Models.getOrderinfo_Result>
+
+@{
+    ViewBag.Title = "ActiveOrder";
+    Layout = "~/Views/Shared/AdminTheme.cshtml";
+}
+
+
+<div class="nk-block nk-block-lg">
+    <div class="nk-block-head">
+        <div class="nk-block-head-content">
+            <h4 class="nk-block-title">Active Ordera</h4>
+
+        </div>
+    </div>
+    <div class="card card-preview" style="overflow-x: auto;">
+        <div class="card-inner" style="overflow-x: auto;">
+            <table class="datatable-init-export nowrap table" style="overflow-x: auto;">
+                <thead>
+                    <tr>
+                        <th> Order Number</th>
+                        <th>Order date</th>
+                        <th>Amount</th>
+                        <th>Pickup date</th>
+                        <th>Vehcle Type</th>
+                        <th>Person</th>
+                        <th>Bags</th>
+                        <th>Full Name</th>
+                        <th>Contact No</th>
+                        <th>Emails</th>
+                        <th>Pickup Plce</th>
+                        <th>Drop OFF</th>
+                        <th>Notes</th>
+                        <th>Instruction</th>
+                   
+                
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ONumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ODate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NetAmount)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Pickuptime)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PackageName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Person)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Bags)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FullName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contact)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Pickupplace)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DropOffloc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Notes)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.instruction)
+                            </td>
+                        
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div><!-- .card-preview -->
+</div>

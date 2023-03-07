@@ -69,6 +69,7 @@
           <Property Name="SName" Type="varchar" MaxLength="100" />
           <Property Name="SEmail" Type="varchar" MaxLength="100" />
           <Property Name="SContact" Type="varchar" MaxLength="100" />
+          <Property Name="refno" Type="int" />
         </EntityType>
         <Association Name="FK__ConfirmOrde__Cid__5BE2A6F2">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
@@ -118,6 +119,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Supplier__refno__5DCAEF64">
+          <End Role="Orderinfo" Type="Self.Orderinfo" Multiplicity="0..1" />
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orderinfo">
+              <PropertyRef Name="Oid" />
+            </Principal>
+            <Dependent Role="Supplier">
+              <PropertyRef Name="refno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="getOrderinfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="OStatus" Type="varchar" Mode="In" />
         </Function>
@@ -143,6 +156,10 @@
           <AssociationSet Name="FK__ConfirmOrde__Sid__47DBAE45" Association="Self.FK__ConfirmOrde__Sid__47DBAE45">
             <End Role="Supplier" EntitySet="Supplier" />
             <End Role="ConfirmOrder" EntitySet="ConfirmOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Supplier__refno__5DCAEF64" Association="Self.FK__Supplier__refno__5DCAEF64">
+            <End Role="Orderinfo" EntitySet="Orderinfo" />
+            <End Role="Supplier" EntitySet="Supplier" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -187,6 +204,10 @@
           <FunctionImport Name="getOrderinfo" ReturnType="Collection(StripeIntegerationModel.getOrderinfo_Result)">
           <Parameter Name="OStatus" Mode="In" Type="String" />
           </FunctionImport>
+          <AssociationSet Name="FK__Supplier__refno__5DCAEF64" Association="StripeIntegerationModel.FK__Supplier__refno__5DCAEF64">
+            <End Role="Orderinfo" EntitySet="Orderinfoes" />
+            <End Role="Supplier" EntitySet="Suppliers" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Package">
           <Key>
@@ -238,6 +259,7 @@
           <Property Name="DropOffloc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ConfirmOrders" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Oid__46E78A0C" FromRole="Orderinfo" ToRole="ConfirmOrder" />
           <Property Name="NetAmount" Type="Int32" />
+          <NavigationProperty Name="Suppliers" Relationship="StripeIntegerationModel.FK__Supplier__refno__5DCAEF64" FromRole="Orderinfo" ToRole="Supplier" />
         </EntityType>
         <EntityType Name="Supplier">
           <Key>
@@ -248,6 +270,8 @@
           <Property Name="SEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="SContact" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ConfirmOrders" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Sid__47DBAE45" FromRole="Supplier" ToRole="ConfirmOrder" />
+          <Property Name="refno" Type="Int32" />
+          <NavigationProperty Name="Orderinfo" Relationship="StripeIntegerationModel.FK__Supplier__refno__5DCAEF64" FromRole="Supplier" ToRole="Orderinfo" />
         </EntityType>
         <Association Name="FK__ConfirmOrde__Oid__46E78A0C">
           <End Type="StripeIntegerationModel.Orderinfo" Role="Orderinfo" Multiplicity="0..1" />
@@ -313,6 +337,18 @@
           <Property Type="String" Name="Notes" Nullable="true" MaxLength="150" />
           <Property Type="String" Name="instruction" Nullable="true" MaxLength="250" />
         </ComplexType>
+        <Association Name="FK__Supplier__refno__5DCAEF64">
+          <End Type="StripeIntegerationModel.Orderinfo" Role="Orderinfo" Multiplicity="0..1" />
+          <End Type="StripeIntegerationModel.Supplier" Role="Supplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orderinfo">
+              <PropertyRef Name="Oid" />
+            </Principal>
+            <Dependent Role="Supplier">
+              <PropertyRef Name="refno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -383,6 +419,7 @@
           <EntitySetMapping Name="Suppliers">
             <EntityTypeMapping TypeName="StripeIntegerationModel.Supplier">
               <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="refno" ColumnName="refno" />
                 <ScalarProperty Name="SContact" ColumnName="SContact" />
                 <ScalarProperty Name="SEmail" ColumnName="SEmail" />
                 <ScalarProperty Name="SName" ColumnName="SName" />

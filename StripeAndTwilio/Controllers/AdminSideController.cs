@@ -50,5 +50,14 @@ namespace StripeAndTwilio.Controllers
             var data=db.Packages.ToList();
             return View(data);
         }
+        public ActionResult ActiveOrder()
+        {
+            if (Session["Admin"] != "Active")
+            {
+                return RedirectToAction("Login", "Accountside");
+            }
+            var data = db.getOrderinfo("Active").ToList();
+            return View(data);
+        }
     }
 }

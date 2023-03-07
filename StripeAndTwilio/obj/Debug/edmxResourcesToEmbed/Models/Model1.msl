@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="StripeIntegerationModel.Customer">
         <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
           <ScalarProperty Name="Cid" ColumnName="Cid" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -15,6 +16,7 @@
     <EntitySetMapping Name="Packages">
       <EntityTypeMapping TypeName="StripeIntegerationModel.Package">
         <MappingFragment StoreEntitySet="Package">
+          <ScalarProperty Name="PerKm" ColumnName="PerKm" />
           <ScalarProperty Name="Intialamount" ColumnName="Intialamount" />
           <ScalarProperty Name="Bags" ColumnName="Bags" />
           <ScalarProperty Name="Person" ColumnName="Person" />
@@ -36,6 +38,11 @@
     <EntitySetMapping Name="ConfirmOrders">
       <EntityTypeMapping TypeName="StripeIntegerationModel.ConfirmOrder">
         <MappingFragment StoreEntitySet="ConfirmOrder">
+          <ScalarProperty Name="OStatus" ColumnName="OStatus" />
+          <ScalarProperty Name="Cid" ColumnName="Cid" />
+          <ScalarProperty Name="Pid" ColumnName="Pid" />
+          <ScalarProperty Name="instruction" ColumnName="instruction" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
           <ScalarProperty Name="Sid" ColumnName="Sid" />
           <ScalarProperty Name="Oid" ColumnName="Oid" />
           <ScalarProperty Name="Coid" ColumnName="Coid" />
@@ -45,6 +52,7 @@
     <EntitySetMapping Name="Orderinfoes">
       <EntityTypeMapping TypeName="StripeIntegerationModel.Orderinfo">
         <MappingFragment StoreEntitySet="Orderinfo">
+          <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
           <ScalarProperty Name="DropOffloc" ColumnName="DropOffloc" />
           <ScalarProperty Name="Pickupplace" ColumnName="Pickupplace" />
           <ScalarProperty Name="Pickuptime" ColumnName="Pickuptime" />
@@ -64,5 +72,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getOrderinfo" FunctionName="StripeIntegerationModel.Store.getOrderinfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StripeIntegerationModel.getOrderinfo_Result">
+          <ScalarProperty Name="ONumber" ColumnName="ONumber" />
+          <ScalarProperty Name="ODate" ColumnName="ODate" />
+          <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+          <ScalarProperty Name="Pickuptime" ColumnName="Pickuptime" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="Person" ColumnName="Person" />
+          <ScalarProperty Name="Bags" ColumnName="Bags" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Pickupplace" ColumnName="Pickupplace" />
+          <ScalarProperty Name="DropOffloc" ColumnName="DropOffloc" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="instruction" ColumnName="instruction" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -888,6 +888,7 @@
     <Content Include="Views\Home\PrivacyPloicy.cshtml" />
     <Content Include="Views\Home\Termscondition.cshtml" />
     <Content Include="Views\Home\cancellationpolicy.cshtml" />
+    <Content Include="Views\AdminSide\ActiveOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

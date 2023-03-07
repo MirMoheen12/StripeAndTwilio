@@ -15,6 +15,7 @@
         <AssociationConnector Association="StripeIntegerationModel.FK__ConfirmOrde__Sid__47DBAE45" />
         <AssociationConnector Association="StripeIntegerationModel.FK__ConfirmOrde__Cid__5BE2A6F2" />
         <AssociationConnector Association="StripeIntegerationModel.FK__ConfirmOrde__Pid__5AEE82B9" />
+        <AssociationConnector Association="StripeIntegerationModel.FK__Supplier__refno__5DCAEF64" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
