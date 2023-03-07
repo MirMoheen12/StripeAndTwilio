@@ -10,6 +10,7 @@ namespace StripeAndTwilio.Controllers
     public class AccountsideController : Controller
     {
         DbEntities db = new DbEntities();
+
         // GET: Accountside
         [HttpGet]
         public ActionResult Login()
@@ -23,7 +24,7 @@ namespace StripeAndTwilio.Controllers
             if (data != null)
             {
                 Session["Admin"] = "Active";
-                return RedirectToAction("Index", "AdminSide");
+                return RedirectToAction("AllPackage", "AdminSide");
             }
             return View();
         }

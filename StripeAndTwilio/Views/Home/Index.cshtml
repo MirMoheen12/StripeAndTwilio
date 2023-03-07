@@ -40,7 +40,7 @@
                                 <div style=" text-align: left;">Select date</div>
                                 <div class="form-group">
 
-                                    <input type="date" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="text" value="" class="ajaxField required">
+                                    <input type="date" id="bookdate"  style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="text" value="" class="ajaxField required">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -51,13 +51,13 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="number" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="phone" value="" placeholder="Passenger" min="0" class="ajaxField required">
+                                    <input type="number" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" id="bookpassenger" placeholder="Passenger" min="0" class="ajaxField required">
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="number" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="text" value="" placeholder="Luggage" class="ajaxField required">
+                                    <input type="number" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="text" id="Bagsbook" value="" placeholder="Luggage" class="ajaxField required">
                                 </div>
                             </div>
 
@@ -78,9 +78,14 @@
 </div>
 
 <form id="formmintid" method="post" action="~/Home/Index">
-    <input name="mint" type="number"id="mintid" hidden />
+    <input name="Totalminutes" type="number" id="mintid" hidden />
+    <input name="Fromloc" type="text" id="Fromloc" hidden />
+    <input name="Toloc" type="text" id="Toloc" hidden />
+    <input name="Passenger" type="number" id="Passenger" hidden />
+    <input name="Luggage" type="number" id="Luggage" hidden />
+    <input name="bookingdate" type="date" id="bookingdate" hidden />
     <button type="submit" hidden>save</button>
-    </form>
+</form>
 
 <div class="homepage-block-yellow-3">
     <div class="container">
@@ -101,34 +106,7 @@
     </div>
 </div>
 
-@*<section id="services">
-    <div class="container">
-        <h4 class="yellow">Welcome</h4>
-        <h2 class="h1">Our Services</h2>
-        <div class="row">
-            <div class="col-md-3 col-sm-6 col-ms-6 matchHeight">
-                <div class="image"><img src="~/Content/assets/images/_services-1.png" alt="Service"></div>
-                <h5>Rapid city transfer</h5>
-                <p>We will bring you quickly and comfortably to anywhere in your city</p>
-            </div>
-            <div class="col-md-3 col-sm-6 col-ms-6 matchHeight">
-                <div class="image"><img src="~/Content/assets/images/_services-2.png" alt="Service"></div>
-                <h5>Booking a hotel</h5>
-                <p>If you need a comfortable hotel, our operators will book it for you, and take a taxi to the address</p>
-            </div>
-            <div class="col-md-3 col-sm-6 col-ms-6 matchHeight">
-                <div class="image"><img src="~/Content/assets/images/_services-3.png" alt="Service"></div>
-                <h5>Airport transfer</h5>
-                <p>We will bring you quickly and comfortably to anywhere in your city</p>
-            </div>
-            <div class="col-md-3 col-sm-6 col-ms-6 matchHeight">
-                <div class="image"><img src="~/Content/assets/images/_services-4.png" alt="Service"></div>
-                <h5>Baggage transport</h5>
-                <p>If you need a comfortable hotel, our operators will book it for you, and take a taxi to the address</p>
-            </div>
-        </div>
-    </div>
-</section>*@
+
 <section id="tariffs">
     <div class="container">
         <h4 class="yellow">See Our</h4>
@@ -323,7 +301,7 @@
             var to_places = new google.maps.places.Autocomplete(
                 document.getElementById("to_places")
             );
-
+         
             google.maps.event.addListener(
                 from_places,
                 "place_changed",
@@ -392,7 +370,19 @@
                     var duration_value = duration.value;
                     //alert(duration_value);
                     $("#mintid").val(duration_value);
+                    var Passenge = $('#bookpassenger').val();
+                    $("#Passenger").val(Passenge);
+                    var Luggage = $('#Bagsbook').val();
+                    $("#Luggage").val(Luggage);
+                    var fp = $('#from_places').val();
+                    $("#Fromloc").val(fp);
+                    var tp = $('#to_places').val();
+                    $("#Toloc").val(tp);
+                    var bookdate = $('#bookdate').val();
+                    $("#bookingdate").val(bookdate);
                     $('form#formmintid').submit();
+                
+                    
                     //$("#mile").html(
                     //    `Distance in Miles: ${distance_in_mile.toFixed(2)}`
                     //);

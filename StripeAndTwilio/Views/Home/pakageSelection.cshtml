@@ -31,7 +31,7 @@
             <div class="col-xs-6 col-md-4"><p style="margin-top:0px !important">60 min free waiting time</p></div>
             <div class="col-xs-12 col-md-offset-2 col-md-2">
                 <p style="margin-top:0px !important">
-                    <a href="@Url.Action("CreateCheckoutSession","Home",new {amount=item.Intialamount.ToString()})" class="btn btn-sm aligncenter" style="background-color: rgb(72, 169, 70); padding-top: 15PX; margin-bottom: -1em !important; padding-bottom: 15PX"><span> Book Now</span></a>
+                    <a href="@Url.Action("CreateCheckoutSession","Home",new {amount=item.Intialamount.ToString(),pkg=item.PID})" class="btn btn-sm aligncenter" style="background-color: rgb(72, 169, 70); padding-top: 15PX; margin-bottom: -1em !important; padding-bottom: 15PX"><span> Book Now</span></a>
                 </p>
             </div>
             @*<div class="col-sm-3"><p style="margin-top:0px !important">Person</p></div>

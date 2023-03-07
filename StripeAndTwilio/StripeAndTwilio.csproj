@@ -157,6 +157,7 @@
     <Compile Include="Models\AllUser.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BookingModel.cs" />
     <Compile Include="Models\ConfirmOrder.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -88,5 +88,14 @@ namespace StripeAndTwilio.Controllers
             var data = db.Suppliers.ToList();
             return View(data);
         }
+        public ActionResult Logout()
+        {
+            if (Session["Admin"] != "Active")
+            {
+                return RedirectToAction("Login", "Accountside");
+            }
+            Session["Admin"] = "NotFound";
+            return RedirectToAction("Login", "Accountside");
+        }
     }
 }
