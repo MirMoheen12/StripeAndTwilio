@@ -10,25 +10,22 @@
 namespace StripeAndTwilio.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Orderinfo
+    public partial class getOrderinfo_Result
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Orderinfo()
-        {
-            this.ConfirmOrders = new HashSet<ConfirmOrder>();
-        }
-    
-        public int Oid { get; set; }
         public Nullable<int> ONumber { get; set; }
         public Nullable<System.DateTime> ODate { get; set; }
+        public Nullable<int> NetAmount { get; set; }
         public Nullable<System.DateTime> Pickuptime { get; set; }
+        public string PackageName { get; set; }
+        public Nullable<int> Person { get; set; }
+        public Nullable<int> Bags { get; set; }
+        public string FullName { get; set; }
+        public string Contact { get; set; }
+        public string Email { get; set; }
         public string Pickupplace { get; set; }
         public string DropOffloc { get; set; }
-        public Nullable<int> NetAmount { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ConfirmOrder> ConfirmOrders { get; set; }
+        public string Notes { get; set; }
+        public string instruction { get; set; }
     }
 }

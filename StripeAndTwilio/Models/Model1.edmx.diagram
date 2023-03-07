@@ -13,6 +13,8 @@
         <EntityTypeShape EntityType="StripeIntegerationModel.Supplier" Width="1.5" PointX="3.375" PointY="3.875" />
         <AssociationConnector Association="StripeIntegerationModel.FK__ConfirmOrde__Oid__46E78A0C" />
         <AssociationConnector Association="StripeIntegerationModel.FK__ConfirmOrde__Sid__47DBAE45" />
+        <AssociationConnector Association="StripeIntegerationModel.FK__ConfirmOrde__Cid__5BE2A6F2" />
+        <AssociationConnector Association="StripeIntegerationModel.FK__ConfirmOrde__Pid__5AEE82B9" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

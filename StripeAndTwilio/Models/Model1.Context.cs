@@ -12,6 +12,8 @@ namespace StripeAndTwilio.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class DbEntities : DbContext
     {
@@ -31,5 +33,14 @@ namespace StripeAndTwilio.Models
         public virtual DbSet<ConfirmOrder> ConfirmOrders { get; set; }
         public virtual DbSet<Orderinfo> Orderinfoes { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
+    
+        public virtual ObjectResult<getOrderinfo_Result> getOrderinfo(string oStatus)
+        {
+            var oStatusParameter = oStatus != null ?
+                new ObjectParameter("OStatus", oStatus) :
+                new ObjectParameter("OStatus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getOrderinfo_Result>("getOrderinfo", oStatusParameter);
+        }
     }
 }

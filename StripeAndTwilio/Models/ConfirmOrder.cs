@@ -17,8 +17,15 @@ namespace StripeAndTwilio.Models
         public int Coid { get; set; }
         public Nullable<int> Oid { get; set; }
         public Nullable<int> Sid { get; set; }
+        public string Notes { get; set; }
+        public string instruction { get; set; }
+        public Nullable<int> Pid { get; set; }
+        public Nullable<int> Cid { get; set; }
+        public string OStatus { get; set; }
     
         public virtual Orderinfo Orderinfo { get; set; }
         public virtual Supplier Supplier { get; set; }
+        public virtual Customer Customer { get; set; }
+        public virtual Package Package { get; set; }
     }
 }

@@ -14,10 +14,20 @@ namespace StripeAndTwilio.Models
     
     public partial class Package
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Package()
+        {
+            this.ConfirmOrders = new HashSet<ConfirmOrder>();
+        }
+    
         public int PID { get; set; }
         public string PackageName { get; set; }
         public Nullable<int> Person { get; set; }
         public Nullable<int> Bags { get; set; }
         public Nullable<int> Intialamount { get; set; }
+        public Nullable<int> PerKm { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ConfirmOrder> ConfirmOrders { get; set; }
     }
 }

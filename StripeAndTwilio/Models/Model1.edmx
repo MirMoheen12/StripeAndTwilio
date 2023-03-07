@@ -21,6 +21,11 @@
           <Property Name="Coid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Oid" Type="int" />
           <Property Name="Sid" Type="int" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="150" />
+          <Property Name="instruction" Type="varchar" MaxLength="250" />
+          <Property Name="Pid" Type="int" />
+          <Property Name="Cid" Type="int" />
+          <Property Name="OStatus" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -31,6 +36,7 @@
           <Property Name="Email" Type="varchar" MaxLength="100" />
           <Property Name="Amount" Type="float" />
           <Property Name="DateAndTime" Type="date" />
+          <Property Name="Contact" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Orderinfo">
           <Key>
@@ -42,6 +48,7 @@
           <Property Name="Pickuptime" Type="datetime" />
           <Property Name="Pickupplace" Type="varchar" MaxLength="100" />
           <Property Name="DropOffloc" Type="varchar" MaxLength="100" />
+          <Property Name="NetAmount" Type="int" />
         </EntityType>
         <EntityType Name="Package">
           <Key>
@@ -52,6 +59,7 @@
           <Property Name="Person" Type="int" />
           <Property Name="Bags" Type="int" />
           <Property Name="Intialamount" Type="int" />
+          <Property Name="PerKm" Type="int" />
         </EntityType>
         <EntityType Name="Supplier">
           <Key>
@@ -62,6 +70,18 @@
           <Property Name="SEmail" Type="varchar" MaxLength="100" />
           <Property Name="SContact" Type="varchar" MaxLength="100" />
         </EntityType>
+        <Association Name="FK__ConfirmOrde__Cid__5BE2A6F2">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="ConfirmOrder" Type="Self.ConfirmOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Cid" />
+            </Principal>
+            <Dependent Role="ConfirmOrder">
+              <PropertyRef Name="Cid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__ConfirmOrde__Oid__46E78A0C">
           <End Role="Orderinfo" Type="Self.Orderinfo" Multiplicity="0..1" />
           <End Role="ConfirmOrder" Type="Self.ConfirmOrder" Multiplicity="*" />
@@ -71,6 +91,18 @@
             </Principal>
             <Dependent Role="ConfirmOrder">
               <PropertyRef Name="Oid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ConfirmOrde__Pid__5AEE82B9">
+          <End Role="Package" Type="Self.Package" Multiplicity="0..1" />
+          <End Role="ConfirmOrder" Type="Self.ConfirmOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Package">
+              <PropertyRef Name="PID" />
+            </Principal>
+            <Dependent Role="ConfirmOrder">
+              <PropertyRef Name="Pid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -86,6 +118,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="getOrderinfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OStatus" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="StripeIntegerationModelStoreContainer">
           <EntitySet Name="AllUsers" EntityType="Self.AllUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ConfirmOrder" EntityType="Self.ConfirmOrder" Schema="dbo" store:Type="Tables" />
@@ -93,8 +128,16 @@
           <EntitySet Name="Orderinfo" EntityType="Self.Orderinfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Package" EntityType="Self.Package" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ConfirmOrde__Cid__5BE2A6F2" Association="Self.FK__ConfirmOrde__Cid__5BE2A6F2">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="ConfirmOrder" EntitySet="ConfirmOrder" />
+          </AssociationSet>
           <AssociationSet Name="FK__ConfirmOrde__Oid__46E78A0C" Association="Self.FK__ConfirmOrde__Oid__46E78A0C">
             <End Role="Orderinfo" EntitySet="Orderinfo" />
+            <End Role="ConfirmOrder" EntitySet="ConfirmOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ConfirmOrde__Pid__5AEE82B9" Association="Self.FK__ConfirmOrde__Pid__5AEE82B9">
+            <End Role="Package" EntitySet="Package" />
             <End Role="ConfirmOrder" EntitySet="ConfirmOrder" />
           </AssociationSet>
           <AssociationSet Name="FK__ConfirmOrde__Sid__47DBAE45" Association="Self.FK__ConfirmOrde__Sid__47DBAE45">
@@ -115,6 +158,8 @@
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Amount" Type="Double" />
           <Property Name="DateAndTime" Type="DateTime" Precision="0" />
+          <Property Name="Contact" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ConfirmOrders" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Cid__5BE2A6F2" FromRole="Customer" ToRole="ConfirmOrder" />
         </EntityType>
         <EntityContainer Name="DbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Customers" EntityType="Self.Customer" />
@@ -131,6 +176,17 @@
             <End Role="Supplier" EntitySet="Suppliers" />
             <End Role="ConfirmOrder" EntitySet="ConfirmOrders" />
           </AssociationSet>
+          <AssociationSet Name="FK__ConfirmOrde__Cid__5BE2A6F2" Association="StripeIntegerationModel.FK__ConfirmOrde__Cid__5BE2A6F2">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="ConfirmOrder" EntitySet="ConfirmOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ConfirmOrde__Pid__5AEE82B9" Association="StripeIntegerationModel.FK__ConfirmOrde__Pid__5AEE82B9">
+            <End Role="Package" EntitySet="Packages" />
+            <End Role="ConfirmOrder" EntitySet="ConfirmOrders" />
+          </AssociationSet>
+          <FunctionImport Name="getOrderinfo" ReturnType="Collection(StripeIntegerationModel.getOrderinfo_Result)">
+          <Parameter Name="OStatus" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Package">
           <Key>
@@ -141,6 +197,8 @@
           <Property Name="Person" Type="Int32" />
           <Property Name="Bags" Type="Int32" />
           <Property Name="Intialamount" Type="Int32" />
+          <Property Name="PerKm" Type="Int32" />
+          <NavigationProperty Name="ConfirmOrders" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Pid__5AEE82B9" FromRole="Package" ToRole="ConfirmOrder" />
         </EntityType>
         <EntityType Name="AllUser">
           <Key>
@@ -160,6 +218,13 @@
           <Property Name="Sid" Type="Int32" />
           <NavigationProperty Name="Orderinfo" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Oid__46E78A0C" FromRole="ConfirmOrder" ToRole="Orderinfo" />
           <NavigationProperty Name="Supplier" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Sid__47DBAE45" FromRole="ConfirmOrder" ToRole="Supplier" />
+          <Property Name="Notes" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="instruction" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Pid" Type="Int32" />
+          <Property Name="Cid" Type="Int32" />
+          <Property Name="OStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customer" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Cid__5BE2A6F2" FromRole="ConfirmOrder" ToRole="Customer" />
+          <NavigationProperty Name="Package" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Pid__5AEE82B9" FromRole="ConfirmOrder" ToRole="Package" />
         </EntityType>
         <EntityType Name="Orderinfo">
           <Key>
@@ -172,6 +237,7 @@
           <Property Name="Pickupplace" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="DropOffloc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ConfirmOrders" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Oid__46E78A0C" FromRole="Orderinfo" ToRole="ConfirmOrder" />
+          <Property Name="NetAmount" Type="Int32" />
         </EntityType>
         <EntityType Name="Supplier">
           <Key>
@@ -207,6 +273,46 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__ConfirmOrde__Cid__5BE2A6F2">
+          <End Type="StripeIntegerationModel.Customer" Role="Customer" Multiplicity="0..1" />
+          <End Type="StripeIntegerationModel.ConfirmOrder" Role="ConfirmOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Cid" />
+            </Principal>
+            <Dependent Role="ConfirmOrder">
+              <PropertyRef Name="Cid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ConfirmOrde__Pid__5AEE82B9">
+          <End Type="StripeIntegerationModel.Package" Role="Package" Multiplicity="0..1" />
+          <End Type="StripeIntegerationModel.ConfirmOrder" Role="ConfirmOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Package">
+              <PropertyRef Name="PID" />
+            </Principal>
+            <Dependent Role="ConfirmOrder">
+              <PropertyRef Name="Pid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="getOrderinfo_Result">
+          <Property Type="Int32" Name="ONumber" Nullable="true" />
+          <Property Type="DateTime" Name="ODate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="NetAmount" Nullable="true" />
+          <Property Type="DateTime" Name="Pickuptime" Nullable="true" Precision="23" />
+          <Property Type="String" Name="PackageName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="Person" Nullable="true" />
+          <Property Type="Int32" Name="Bags" Nullable="true" />
+          <Property Type="String" Name="FullName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Contact" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Pickupplace" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DropOffloc" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Notes" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="instruction" Nullable="true" MaxLength="250" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -216,6 +322,7 @@
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="StripeIntegerationModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
                 <ScalarProperty Name="Cid" ColumnName="Cid" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
@@ -227,6 +334,7 @@
           <EntitySetMapping Name="Packages">
             <EntityTypeMapping TypeName="StripeIntegerationModel.Package">
               <MappingFragment StoreEntitySet="Package">
+                <ScalarProperty Name="PerKm" ColumnName="PerKm" />
                 <ScalarProperty Name="Intialamount" ColumnName="Intialamount" />
                 <ScalarProperty Name="Bags" ColumnName="Bags" />
                 <ScalarProperty Name="Person" ColumnName="Person" />
@@ -248,6 +356,11 @@
           <EntitySetMapping Name="ConfirmOrders">
             <EntityTypeMapping TypeName="StripeIntegerationModel.ConfirmOrder">
               <MappingFragment StoreEntitySet="ConfirmOrder">
+                <ScalarProperty Name="OStatus" ColumnName="OStatus" />
+                <ScalarProperty Name="Cid" ColumnName="Cid" />
+                <ScalarProperty Name="Pid" ColumnName="Pid" />
+                <ScalarProperty Name="instruction" ColumnName="instruction" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
                 <ScalarProperty Name="Sid" ColumnName="Sid" />
                 <ScalarProperty Name="Oid" ColumnName="Oid" />
                 <ScalarProperty Name="Coid" ColumnName="Coid" />
@@ -257,6 +370,7 @@
           <EntitySetMapping Name="Orderinfoes">
             <EntityTypeMapping TypeName="StripeIntegerationModel.Orderinfo">
               <MappingFragment StoreEntitySet="Orderinfo">
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
                 <ScalarProperty Name="DropOffloc" ColumnName="DropOffloc" />
                 <ScalarProperty Name="Pickupplace" ColumnName="Pickupplace" />
                 <ScalarProperty Name="Pickuptime" ColumnName="Pickuptime" />
@@ -276,6 +390,26 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="getOrderinfo" FunctionName="StripeIntegerationModel.Store.getOrderinfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="StripeIntegerationModel.getOrderinfo_Result">
+                <ScalarProperty Name="ONumber" ColumnName="ONumber" />
+                <ScalarProperty Name="ODate" ColumnName="ODate" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+                <ScalarProperty Name="Pickuptime" ColumnName="Pickuptime" />
+                <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+                <ScalarProperty Name="Person" ColumnName="Person" />
+                <ScalarProperty Name="Bags" ColumnName="Bags" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Pickupplace" ColumnName="Pickupplace" />
+                <ScalarProperty Name="DropOffloc" ColumnName="DropOffloc" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="instruction" ColumnName="instruction" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
