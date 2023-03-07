@@ -65,6 +65,7 @@
     <EntitySetMapping Name="Suppliers">
       <EntityTypeMapping TypeName="StripeIntegerationModel.Supplier">
         <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="refno" ColumnName="refno" />
           <ScalarProperty Name="SContact" ColumnName="SContact" />
           <ScalarProperty Name="SEmail" ColumnName="SEmail" />
           <ScalarProperty Name="SName" ColumnName="SName" />

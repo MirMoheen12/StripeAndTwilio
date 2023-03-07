@@ -64,6 +64,7 @@
     <Property Name="SName" Type="varchar" MaxLength="100" />
     <Property Name="SEmail" Type="varchar" MaxLength="100" />
     <Property Name="SContact" Type="varchar" MaxLength="100" />
+    <Property Name="refno" Type="int" />
   </EntityType>
   <Association Name="FK__ConfirmOrde__Cid__5BE2A6F2">
     <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
@@ -113,6 +114,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__Supplier__refno__5DCAEF64">
+    <End Role="Orderinfo" Type="Self.Orderinfo" Multiplicity="0..1" />
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orderinfo">
+        <PropertyRef Name="Oid" />
+      </Principal>
+      <Dependent Role="Supplier">
+        <PropertyRef Name="refno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Function Name="getOrderinfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="OStatus" Type="varchar" Mode="In" />
   </Function>
@@ -138,6 +151,10 @@
     <AssociationSet Name="FK__ConfirmOrde__Sid__47DBAE45" Association="Self.FK__ConfirmOrde__Sid__47DBAE45">
       <End Role="Supplier" EntitySet="Supplier" />
       <End Role="ConfirmOrder" EntitySet="ConfirmOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Supplier__refno__5DCAEF64" Association="Self.FK__Supplier__refno__5DCAEF64">
+      <End Role="Orderinfo" EntitySet="Orderinfo" />
+      <End Role="Supplier" EntitySet="Supplier" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

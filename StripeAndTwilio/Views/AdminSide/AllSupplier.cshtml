@@ -1,0 +1,57 @@
+﻿@model IEnumerable<StripeAndTwilio.Models.Supplier>
+@{
+    ViewBag.Title = "AllSupplier";
+    Layout = "~/Views/Shared/AdminTheme.cshtml";
+}
+
+
+<div class="nk-block nk-block-lg">
+    <div class="nk-block-head">
+        <div class="nk-block-head-content">
+            <h4 class="nk-block-title">All Supplier</h4>
+
+        </div>
+    </div>
+    <div class="card card-preview">
+        <div class="card-inner">
+            <table class="datatable-init-export nowrap table">
+                <thead>
+                    <tr>
+                        <th> Supplier Name</th>
+                        <th>Emails</th>
+                        <th>Contact</th>
+                        <th>Order No</th>
+                
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SEmail)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SContact)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.refno)
+                            </td>
+                            
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div><!-- .card-preview -->
+</div>
+
+
+
+

@@ -59,5 +59,34 @@ namespace StripeAndTwilio.Controllers
             var data = db.getOrderinfo("Active").ToList();
             return View(data);
         }
+        public ActionResult AddSupplier()
+        {
+            if (Session["Admin"] != "Active")
+            {
+                return RedirectToAction("Login", "Accountside");
+            }
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddSupplier(Supplier supplier)
+        {
+            if (Session["Admin"] != "Active")
+            {
+                return RedirectToAction("Login", "Accountside");
+            }
+            db.Suppliers.Add(supplier);
+            db.SaveChanges();
+            return View();
+        }
+        public ActionResult AllSupplier()
+        {
+
+            if (Session["Admin"] != "Active")
+            {
+                return RedirectToAction("Login", "Accountside");
+            }
+            var data = db.Suppliers.ToList();
+            return View(data);
+        }
     }
 }

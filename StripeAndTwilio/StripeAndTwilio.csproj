@@ -889,6 +889,8 @@
     <Content Include="Views\Home\Termscondition.cshtml" />
     <Content Include="Views\Home\cancellationpolicy.cshtml" />
     <Content Include="Views\AdminSide\ActiveOrder.cshtml" />
+    <Content Include="Views\AdminSide\AddSupplier.cshtml" />
+    <Content Include="Views\AdminSide\AllSupplier.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

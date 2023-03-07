@@ -38,6 +38,10 @@
     <FunctionImport Name="getOrderinfo" ReturnType="Collection(StripeIntegerationModel.getOrderinfo_Result)">
       <Parameter Name="OStatus" Mode="In" Type="String" />
     </FunctionImport>
+    <AssociationSet Name="FK__Supplier__refno__5DCAEF64" Association="StripeIntegerationModel.FK__Supplier__refno__5DCAEF64">
+      <End Role="Orderinfo" EntitySet="Orderinfoes" />
+      <End Role="Supplier" EntitySet="Suppliers" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Package">
     <Key>
@@ -89,6 +93,7 @@
     <Property Name="DropOffloc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ConfirmOrders" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Oid__46E78A0C" FromRole="Orderinfo" ToRole="ConfirmOrder" />
     <Property Name="NetAmount" Type="Int32" />
+    <NavigationProperty Name="Suppliers" Relationship="StripeIntegerationModel.FK__Supplier__refno__5DCAEF64" FromRole="Orderinfo" ToRole="Supplier" />
   </EntityType>
   <EntityType Name="Supplier">
     <Key>
@@ -99,6 +104,8 @@
     <Property Name="SEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="SContact" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ConfirmOrders" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Sid__47DBAE45" FromRole="Supplier" ToRole="ConfirmOrder" />
+    <Property Name="refno" Type="Int32" />
+    <NavigationProperty Name="Orderinfo" Relationship="StripeIntegerationModel.FK__Supplier__refno__5DCAEF64" FromRole="Supplier" ToRole="Orderinfo" />
   </EntityType>
   <Association Name="FK__ConfirmOrde__Oid__46E78A0C">
     <End Type="StripeIntegerationModel.Orderinfo" Role="Orderinfo" Multiplicity="0..1" />
@@ -164,4 +171,16 @@
     <Property Type="String" Name="Notes" Nullable="true" MaxLength="150" />
     <Property Type="String" Name="instruction" Nullable="true" MaxLength="250" />
   </ComplexType>
+  <Association Name="FK__Supplier__refno__5DCAEF64">
+    <End Type="StripeIntegerationModel.Orderinfo" Role="Orderinfo" Multiplicity="0..1" />
+    <End Type="StripeIntegerationModel.Supplier" Role="Supplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orderinfo">
+        <PropertyRef Name="Oid" />
+      </Principal>
+      <Dependent Role="Supplier">
+        <PropertyRef Name="refno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
