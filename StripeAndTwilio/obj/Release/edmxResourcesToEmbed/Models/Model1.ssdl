@@ -16,6 +16,11 @@
     <Property Name="Coid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Oid" Type="int" />
     <Property Name="Sid" Type="int" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="150" />
+    <Property Name="instruction" Type="varchar" MaxLength="250" />
+    <Property Name="Pid" Type="int" />
+    <Property Name="Cid" Type="int" />
+    <Property Name="OStatus" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
@@ -26,6 +31,7 @@
     <Property Name="Email" Type="varchar" MaxLength="100" />
     <Property Name="Amount" Type="float" />
     <Property Name="DateAndTime" Type="date" />
+    <Property Name="Contact" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Orderinfo">
     <Key>
@@ -37,6 +43,7 @@
     <Property Name="Pickuptime" Type="datetime" />
     <Property Name="Pickupplace" Type="varchar" MaxLength="100" />
     <Property Name="DropOffloc" Type="varchar" MaxLength="100" />
+    <Property Name="NetAmount" Type="int" />
   </EntityType>
   <EntityType Name="Package">
     <Key>
@@ -47,6 +54,7 @@
     <Property Name="Person" Type="int" />
     <Property Name="Bags" Type="int" />
     <Property Name="Intialamount" Type="int" />
+    <Property Name="PerKm" Type="int" />
   </EntityType>
   <EntityType Name="Supplier">
     <Key>
@@ -56,7 +64,20 @@
     <Property Name="SName" Type="varchar" MaxLength="100" />
     <Property Name="SEmail" Type="varchar" MaxLength="100" />
     <Property Name="SContact" Type="varchar" MaxLength="100" />
+    <Property Name="refno" Type="int" />
   </EntityType>
+  <Association Name="FK__ConfirmOrde__Cid__5BE2A6F2">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="ConfirmOrder" Type="Self.ConfirmOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Cid" />
+      </Principal>
+      <Dependent Role="ConfirmOrder">
+        <PropertyRef Name="Cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__ConfirmOrde__Oid__46E78A0C">
     <End Role="Orderinfo" Type="Self.Orderinfo" Multiplicity="0..1" />
     <End Role="ConfirmOrder" Type="Self.ConfirmOrder" Multiplicity="*" />
@@ -66,6 +87,18 @@
       </Principal>
       <Dependent Role="ConfirmOrder">
         <PropertyRef Name="Oid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ConfirmOrde__Pid__5AEE82B9">
+    <End Role="Package" Type="Self.Package" Multiplicity="0..1" />
+    <End Role="ConfirmOrder" Type="Self.ConfirmOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Package">
+        <PropertyRef Name="PID" />
+      </Principal>
+      <Dependent Role="ConfirmOrder">
+        <PropertyRef Name="Pid" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -81,6 +114,21 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__Supplier__refno__5DCAEF64">
+    <End Role="Orderinfo" Type="Self.Orderinfo" Multiplicity="0..1" />
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orderinfo">
+        <PropertyRef Name="Oid" />
+      </Principal>
+      <Dependent Role="Supplier">
+        <PropertyRef Name="refno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="getOrderinfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OStatus" Type="varchar" Mode="In" />
+  </Function>
   <EntityContainer Name="StripeIntegerationModelStoreContainer">
     <EntitySet Name="AllUsers" EntityType="Self.AllUsers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ConfirmOrder" EntityType="Self.ConfirmOrder" Schema="dbo" store:Type="Tables" />
@@ -88,13 +136,25 @@
     <EntitySet Name="Orderinfo" EntityType="Self.Orderinfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Package" EntityType="Self.Package" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ConfirmOrde__Cid__5BE2A6F2" Association="Self.FK__ConfirmOrde__Cid__5BE2A6F2">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="ConfirmOrder" EntitySet="ConfirmOrder" />
+    </AssociationSet>
     <AssociationSet Name="FK__ConfirmOrde__Oid__46E78A0C" Association="Self.FK__ConfirmOrde__Oid__46E78A0C">
       <End Role="Orderinfo" EntitySet="Orderinfo" />
+      <End Role="ConfirmOrder" EntitySet="ConfirmOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ConfirmOrde__Pid__5AEE82B9" Association="Self.FK__ConfirmOrde__Pid__5AEE82B9">
+      <End Role="Package" EntitySet="Package" />
       <End Role="ConfirmOrder" EntitySet="ConfirmOrder" />
     </AssociationSet>
     <AssociationSet Name="FK__ConfirmOrde__Sid__47DBAE45" Association="Self.FK__ConfirmOrde__Sid__47DBAE45">
       <End Role="Supplier" EntitySet="Supplier" />
       <End Role="ConfirmOrder" EntitySet="ConfirmOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Supplier__refno__5DCAEF64" Association="Self.FK__Supplier__refno__5DCAEF64">
+      <End Role="Orderinfo" EntitySet="Orderinfo" />
+      <End Role="Supplier" EntitySet="Supplier" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

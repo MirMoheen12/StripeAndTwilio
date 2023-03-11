@@ -1,8 +1,8 @@
 ﻿@{
     ViewBag.Title = "Home Page";
-    Layout = "~/Views/Shared/_Theme.cshtml";
+    Layout = null;
 }
-<script defer src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap&language=en&key=AIzaSyDetVuTnBlaepZ7h7VN-A-s8saBo40E5t4" type="text/javascript"></script>
+<!--<script defer src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap&language=en&key=AIzaSyDetVuTnBlaepZ7h7VN-A-s8saBo40E5t4" type="text/javascript"></script>
 
 <div id="homepage-block-3" data-zs-speed="12000" data-zs-interval="7000" data-zs-bullets="false" data-zs-switchSpeed="4000" data-zs-src='["~/Content/assets/images/_homepage-3-2-bg.jpg", "~/Content/assets/images/_homepage-3-bg.jpg"]'>
     <div class="container">
@@ -10,16 +10,16 @@
         <section class="form-taxi-short">
             <div class="container">
                 <form id="distance_form">
-                    <h3 class="aligncenter">Get Taxi <span class="yellow">Online</span></h3>
+                    <h3 class="aligncenter">Get Taxi <span class="yellow">Online</span></h3>-->
                     @*<div class="menu-types row" >
-                        <a href="#" data-value="1" class="type-1 active col-xs-2">Standart</a>
-                        <a href="#" data-value="2" class="type-2 col-xs-2">Business</a>
-                        <a href="#" data-value="3" class="type-3 red col-xs-2">Vip</a>
-                        <a href="#" data-value="4" class="type-4 col-xs-2">Bus-Minivan</a>
-                        <input type="hidden" name="type-value" class="type-value ajaxField" value="1">
-                    </div>*@
-                    <div class="row form-with-labels">
-                   
+                            <a href="#" data-value="1" class="type-1 active col-xs-2">Standart</a>
+                            <a href="#" data-value="2" class="type-2 col-xs-2">Business</a>
+                            <a href="#" data-value="3" class="type-3 red col-xs-2">Vip</a>
+                            <a href="#" data-value="4" class="type-4 col-xs-2">Bus-Minivan</a>
+                            <input type="hidden" name="type-value" class="type-value ajaxField" value="1">
+                        </div>*@
+                    <!--<div class="row form-with-labels">
+
                         <div class="row form-with-labels">
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -40,7 +40,7 @@
                                 <div style=" text-align: left;">Select date</div>
                                 <div class="form-group">
 
-                                    <input type="date" id="bookdate"  style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="text" value="" class="ajaxField required">
+                                    <input type="date" id="bookdate" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="text" value="" class="ajaxField required">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -64,13 +64,13 @@
                         </div>
 
                     </div>
-                 
 
-                
-                        <input class="btn btn-lg btn-yellow aligncenter" type="submit" value="Calculate" />
+
+
+                    <input class="btn btn-lg btn-yellow aligncenter" type="submit" value="Calculate" />
                 </form>
 
-      
+
             </div>
         </section>
 
@@ -301,7 +301,7 @@
             var to_places = new google.maps.places.Autocomplete(
                 document.getElementById("to_places")
             );
-         
+
             google.maps.event.addListener(
                 from_places,
                 "place_changed",
@@ -381,8 +381,8 @@
                     var bookdate = $('#bookdate').val();
                     $("#bookingdate").val(bookdate);
                     $('form#formmintid').submit();
-                
-                    
+
+
                     //$("#mile").html(
                     //    `Distance in Miles: ${distance_in_mile.toFixed(2)}`
                     //);
@@ -402,6 +402,146 @@
             calculateDistance();
         });
     }
-</script>
+</script>-->
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link href="~/Content/HomeTheme/styles.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Taxi_Project</title>
+</head>
+<body>
+    <header style="background-image: url(./Content/HomeTheme/images/Background_1440x1080-1024x768.jpg);
+   background-repeat: no-repeat; object-fit: cover; background-size: 100%; width: 100%; height: 777px">
+        <div class="wrapper">
+            <nav>
+                <div class="main-logo">
+                    <img src="~/Content/HomeTheme/images/logo.png" alt="">
+                </div>
+                <div class="options">
+                    <img class="flag" src="~/Content/HomeTheme/images/Flag_of_the_United_Kingdom 1.png" alt="">
+                    <img class="drop-icon" src="~/Content/HomeTheme/images/dropdown.svg" alt="">
+                    <img class="line31" src="~/Content/HomeTheme/images/Line 31.svg" alt="">
+                    <p class="help-option">Helpdesk</p>
+                </div>
+            </nav>
+            <!--Navbar ends-->
+            <div class="hero-section">
+                <div class="left">
+                    <p class="heading">Lorem ipsum dolor sit amet, consectetur admpus lacus. Integer ut odioti</p>
+                    <img src="~/Content/HomeTheme/images/Line Vector.svg" alt="" style="margin-top: 8px;">
+                    <p class="sub-heading">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Vivamus pulvinar, risus eget fermentum efficitur, augue sapien tincidunt lacus, nec
+                    </p>
+                    <div class="review-pics">
+                        <img src="~/Content/HomeTheme/images/Ellipse 3.png" alt="" class="r-pic">
+                        <img src="~/Content/HomeTheme/images/Ellipse 4.png" alt="" style="margin-left: -20px;" class="r-pic">
+                        <img src="~/Content/HomeTheme/images/Ellipse 5.png" alt="" style="margin-left: -20px;" class="r-pic">
+                        <img src="~/Content/HomeTheme/images/Ellipse 6.png" alt="" style="margin-left: -20px;" class="r-pic">
+                        <p style="background-image: url(~/Content/HomeTheme/images/Ellipse\ 7.svg); background-repeat: no-repeat; width: 63px;
+                height: 63px; display: flex; font-size: 20px; margin-left: -20px;
+                justify-content: center; align-items: center; color: white; font-weight: bold;">3+</p>
+                    </div>
+
+                    <div class="review-stars">
+                        <div>
+                            <img src="images/star.png" alt="">
+                            <img src="~/Content/HomeTheme/images/star.png" alt="">
+                            <img src="~/Content/HomeTheme/images/star.png" alt="">
+                            <img src="~/Content/HomeTheme/images/star.png" alt="">
+                            <img src="~/Content/HomeTheme/images/star.png" alt="">
+                        </div>
+                        <p class="review-text" style="padding-top: 13px;">8 (Reviews)</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <form action="#" class="header-form">
+                        <p class="from-text">From</p>
+                        <div class="input-from">
+                            <span class="search-icon"><img src="~/Content/HomeTheme/images/Vector.svg" alt=""></span>
+                            <input class="from-in form-control" type="text" placeholder="Airport,address,station,port">
+                        </div>
+                        <p class="to-text">To</p>
+                        <div class="input-from">
+                            <span class="search-icon"><img src="~/Content/HomeTheme/images/Vector.svg" alt=""></span>
+                            <input class="from-in form-control" type="text" placeholder="Airport,address,station,port">
+                        </div>
+                        <div class="passenger_luggage">
+                            <div>
+                                <p style="margin-top: 10px; margin-bottom: 10px;">passengers</p>
+                                <div class="input-from" style="height: 49px;">
+                                    <span class="passenger_luggage-icon"><img src="~/Content/HomeTheme/images/Vector (1).svg" alt=""></span>
+                                    <input class="from-in form-control" type="text" placeholder="2" style="text-align:end;">
+                                </div>
+                            </div>
+                            <div>
+                                <p style="margin-top: 10px; margin-bottom: 10px;">Luggage</p>
+                                <div class="input-from" style="height: 49px;">
+                                    <span class="passenger_luggage-icon"><img src="~/Content/HomeTheme/images/Vector (2).svg" alt=""></span>
+                                    <input class="from-in form-control" type="text" placeholder="2" style="text-align:end;">
+                                </div>
+                            </div>
+
+                        </div>
+                        <p class="date_time">pickup date & Time</p>
+                        <div class="input-date-time">
+                            <div class="input-td" style="height: 49px;"
+                                 style=" border-top-right-radius: 0%;">
+                                <span class="date-time-icon"><i class="fa-solid fa-calendar-days"></i></span>
+                                <input class="form-control td-in" type="text" placeholder="28-03-2023">
+                            </div>
+                            <div class="line32">
+                                <img src="~/Content/HomeTheme/images/Line 32.svg" alt="">
+                            </div>
+                            <div class="input-td" style="height: 49px;" style="border-top-right-radius: 0;">
+                                <span class="date-time-icon"><i class="fa-regular fa-clock"></i></span>
+                                <input class="form-control td-in" type="text" placeholder="20:05">
+                            </div>
+                        </div>
+                        <button class="search-btn">Search</button>
+                    </form>
+                </div>
+            </div>
+            <!--Hero section ends-->
+            <div class="route-options">
+                <div class="first">
+                    <img src="~/Content/HomeTheme/images/1.png" alt="" style="width: 32px;
+          height: 32px;">
+                    <p class="first-text">Journey</p>
+                    <img src="~/Content/HomeTheme/images/div.png" alt="" class="straight-line">
+                </div>
+                <div class="second">
+                    <img src="~/Content/HomeTheme/images/div (1).png" alt="" style="width: 32px;
+            height: 32px;">
+                    <p class="secnd-text">Vehicle</p>
+                    <img src="~/Content/HomeTheme/images/div.png" alt="" class="straight-line">
+                </div>
+                <div class="third">
+                    <img src="~/Content/HomeTheme/images/div (2).png" alt="" style="width: 32px;
+                height: 32px;">
+                    <p class="third-text">Vehicle</p>
+                    <img src="~/Content/HomeTheme/images/div.png" alt="" class="straight-line">
+                </div>
+                <div class="fourth">
+                    <img src="~/Content/HomeTheme/images/div (3).png" alt="" style="width: 32px;
+             height: 32px;">
+                    <p class="fourth-text">Pay and Book</p>
+                </div>
+            </div>
+            <!--route section ends-->
+        </div>
+    </header>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" integrity="sha512-2bMhOkE/ACz21dJT8zBOMgMecNxx0d37NND803ExktKiKdSzdwn+L7i9fdccw/3V06gM/DBWKbYmQvKMdAA9Nw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script src="~/Content/HomeTheme/script.js"></script>
+</body>
+</html>

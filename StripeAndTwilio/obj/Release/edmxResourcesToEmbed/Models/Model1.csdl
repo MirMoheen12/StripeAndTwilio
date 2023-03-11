@@ -9,6 +9,8 @@
     <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Amount" Type="Double" />
     <Property Name="DateAndTime" Type="DateTime" Precision="0" />
+    <Property Name="Contact" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ConfirmOrders" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Cid__5BE2A6F2" FromRole="Customer" ToRole="ConfirmOrder" />
   </EntityType>
   <EntityContainer Name="DbEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Customers" EntityType="Self.Customer" />
@@ -25,6 +27,21 @@
       <End Role="Supplier" EntitySet="Suppliers" />
       <End Role="ConfirmOrder" EntitySet="ConfirmOrders" />
     </AssociationSet>
+    <AssociationSet Name="FK__ConfirmOrde__Cid__5BE2A6F2" Association="StripeIntegerationModel.FK__ConfirmOrde__Cid__5BE2A6F2">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="ConfirmOrder" EntitySet="ConfirmOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ConfirmOrde__Pid__5AEE82B9" Association="StripeIntegerationModel.FK__ConfirmOrde__Pid__5AEE82B9">
+      <End Role="Package" EntitySet="Packages" />
+      <End Role="ConfirmOrder" EntitySet="ConfirmOrders" />
+    </AssociationSet>
+    <FunctionImport Name="getOrderinfo" ReturnType="Collection(StripeIntegerationModel.getOrderinfo_Result)">
+      <Parameter Name="OStatus" Mode="In" Type="String" />
+    </FunctionImport>
+    <AssociationSet Name="FK__Supplier__refno__5DCAEF64" Association="StripeIntegerationModel.FK__Supplier__refno__5DCAEF64">
+      <End Role="Orderinfo" EntitySet="Orderinfoes" />
+      <End Role="Supplier" EntitySet="Suppliers" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Package">
     <Key>
@@ -35,6 +52,8 @@
     <Property Name="Person" Type="Int32" />
     <Property Name="Bags" Type="Int32" />
     <Property Name="Intialamount" Type="Int32" />
+    <Property Name="PerKm" Type="Int32" />
+    <NavigationProperty Name="ConfirmOrders" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Pid__5AEE82B9" FromRole="Package" ToRole="ConfirmOrder" />
   </EntityType>
   <EntityType Name="AllUser">
     <Key>
@@ -54,6 +73,13 @@
     <Property Name="Sid" Type="Int32" />
     <NavigationProperty Name="Orderinfo" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Oid__46E78A0C" FromRole="ConfirmOrder" ToRole="Orderinfo" />
     <NavigationProperty Name="Supplier" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Sid__47DBAE45" FromRole="ConfirmOrder" ToRole="Supplier" />
+    <Property Name="Notes" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="instruction" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Pid" Type="Int32" />
+    <Property Name="Cid" Type="Int32" />
+    <Property Name="OStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Customer" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Cid__5BE2A6F2" FromRole="ConfirmOrder" ToRole="Customer" />
+    <NavigationProperty Name="Package" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Pid__5AEE82B9" FromRole="ConfirmOrder" ToRole="Package" />
   </EntityType>
   <EntityType Name="Orderinfo">
     <Key>
@@ -66,6 +92,8 @@
     <Property Name="Pickupplace" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="DropOffloc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ConfirmOrders" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Oid__46E78A0C" FromRole="Orderinfo" ToRole="ConfirmOrder" />
+    <Property Name="NetAmount" Type="Int32" />
+    <NavigationProperty Name="Suppliers" Relationship="StripeIntegerationModel.FK__Supplier__refno__5DCAEF64" FromRole="Orderinfo" ToRole="Supplier" />
   </EntityType>
   <EntityType Name="Supplier">
     <Key>
@@ -76,6 +104,8 @@
     <Property Name="SEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="SContact" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ConfirmOrders" Relationship="StripeIntegerationModel.FK__ConfirmOrde__Sid__47DBAE45" FromRole="Supplier" ToRole="ConfirmOrder" />
+    <Property Name="refno" Type="Int32" />
+    <NavigationProperty Name="Orderinfo" Relationship="StripeIntegerationModel.FK__Supplier__refno__5DCAEF64" FromRole="Supplier" ToRole="Orderinfo" />
   </EntityType>
   <Association Name="FK__ConfirmOrde__Oid__46E78A0C">
     <End Type="StripeIntegerationModel.Orderinfo" Role="Orderinfo" Multiplicity="0..1" />
@@ -98,6 +128,58 @@
       </Principal>
       <Dependent Role="ConfirmOrder">
         <PropertyRef Name="Sid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ConfirmOrde__Cid__5BE2A6F2">
+    <End Type="StripeIntegerationModel.Customer" Role="Customer" Multiplicity="0..1" />
+    <End Type="StripeIntegerationModel.ConfirmOrder" Role="ConfirmOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Cid" />
+      </Principal>
+      <Dependent Role="ConfirmOrder">
+        <PropertyRef Name="Cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ConfirmOrde__Pid__5AEE82B9">
+    <End Type="StripeIntegerationModel.Package" Role="Package" Multiplicity="0..1" />
+    <End Type="StripeIntegerationModel.ConfirmOrder" Role="ConfirmOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Package">
+        <PropertyRef Name="PID" />
+      </Principal>
+      <Dependent Role="ConfirmOrder">
+        <PropertyRef Name="Pid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="getOrderinfo_Result">
+    <Property Type="Int32" Name="ONumber" Nullable="true" />
+    <Property Type="DateTime" Name="ODate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="NetAmount" Nullable="true" />
+    <Property Type="DateTime" Name="Pickuptime" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PackageName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Person" Nullable="true" />
+    <Property Type="Int32" Name="Bags" Nullable="true" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Contact" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Pickupplace" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DropOffloc" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Notes" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="instruction" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <Association Name="FK__Supplier__refno__5DCAEF64">
+    <End Type="StripeIntegerationModel.Orderinfo" Role="Orderinfo" Multiplicity="0..1" />
+    <End Type="StripeIntegerationModel.Supplier" Role="Supplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orderinfo">
+        <PropertyRef Name="Oid" />
+      </Principal>
+      <Dependent Role="Supplier">
+        <PropertyRef Name="refno" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
