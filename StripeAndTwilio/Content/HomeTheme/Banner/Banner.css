@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+}
+.BookContainer{
+    padding: 0 7%;
+    margin-top: 5%;
+}
+.sub-BookContainer{
+    font-weight: 800px;
+    font-size: 20px;
+    color: #51536D;
+}
+.sub-BookContainer p{
+    color: rgb(236, 193, 0);
+    font-size: 13px;
+    font-weight: 600;
+}
+.BookContainer-Boxes{
+    display: flex;
+    flex-wrap: wrap;
+}
+  .wrap    { 
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    } 
+    .flex-item {
+        padding:1%;
+        background: white;
+        width: 329px;
+        height: auto;
+        margin-top: 5%;
+        margin-left: 2%;
+        margin-bottom: 5rem;
+        border-radius: 32px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        box-shadow: 0 5px 20px -1px #d6d6d6;
+    }
+    .wrap h1{
+        margin-top: 2rem;
+        font-size: 20px;
+        color: #51536D;
+    }
+    .wrap p{
+        color: gray;
+        font-size: 15px;
+        margin-top: 10px;
+        padding-bottom: 3%;
+    }
+    .box{
+        background: #faf2db;
+        padding: 20% 20%;
+        border-radius: 32px;
+    }
+
+
+    /* TODO: Banner */
+    .Banner{
+        display: flex;
+        padding: 4% 7%;        
+        background: #51536D;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .Banner div{
+        flex-wrap: wrap;
+    }
+    .left{
+        flex-basis: 48%;
+        color: white;
+        margin-right: 2%;
+    }
+    .left h1{
+        font-size: 30px;
+        margin-bottom: 2rem;
+    }
+    .left p{
+        font-size: 15px;
+        margin-bottom: 3rem;
+        line-height: 20px;
+    }
+    .left button{
+        outline: none;
+        border: none;
+        padding: 15px 30px;
+        background: #F8C732;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .right{
+        flex-basis: 50%;
+    }
+
+@media only screen and (max-width: 768px){
+    .sub-BookContainer{
+       display: flex;
+       flex-direction: column;
+       text-align: center;
+    }
+    .wrap    { 
+        justify-content: center;
+    } 
+    .Banner{
+        padding: 4% 2%;        
+        background: #51536D;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .left{
+        flex-basis: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3%;
+    }
+    .left h1{
+        text-align: center;
+    }
+    .left p{
+        text-align: center;
+    }
+    .right{
+        flex-basis: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .right img{
+        width: 300px;
+    }
+}

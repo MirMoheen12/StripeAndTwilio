@@ -2,57 +2,149 @@
 
 @{
     ViewBag.Title = "About";
-    Layout = "~/Views/Shared/_Theme.cshtml";
+    Layout = null;
 }
 
-<h2>About</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="~/Content/HomeTheme/ContactInfo.css" rel="stylesheet" />
+    
+    <script src="~/Content/HomeTheme/https://kit.fontawesome.com/ee9cae1b8f.js"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- TODO: Navbar Section -->
+    <section>
+        <div class="navbar">
+            <img class="logo" src="~/Content/HomeTheme/assets/Darklogo.png" alt="logo" />
+            <div class="CountriesFlags">
+                <div class="CountriesFlags-info">
+                    <img class="flag"
+                         src="~/Content/HomeTheme/assets/Flag_of_the_United_Kingdom 1.png"
+                         alt="flag" />
+                    <i class="fa-solid fa-caret-down"></i>
+                    <span class="horihentalLine"></span>
+                    <p>Helpdesk</p>
+                </div>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </section>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Cid)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FullName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Amount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateAndTime)
-        </th>
-        <th></th>
-    </tr>
+    <section>
+        <div class="stepLine">
+            <div class="setpProcess">
+                <span class="curcleOfSteps">1</span>
+                <p>Journey</p>
+                <span class="lineOfSetps"></span>
+            </div>
+            <div class="setpProcess">
+                <span class="curcleOfSteps">2</span>
+                <p>Journey</p>
+                <span class="lineOfSetps"></span>
+            </div>
+            <div class="setpProcess">
+                <span class="curcleOfSteps">3</span>
+                <p>Journey</p>
+                <span class="lineOfSetps"></span>
+            </div>
+            <div class="setpProcess">
+                <span class="curcleOfSteps">4</span>
+                <p>Journey</p>
+                <span class="lineOfSetps"></span>
+            </div>
+        </div>
+    </section>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cid)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Amount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateAndTime)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    <!-- TODO: Contact Section -->
+    <section>
+        <div class="ContactInformation">
+            <h1>Contact Information</h1>
+            <div class="container">
+                <div class="left">
+                    <div class="CheckContactInfo">
+                        <input type="checkbox" name="checked" id="checked" />
+                        <p>I'm booking for someone else</p>
+                    </div>
 
-</table>
+                    <div class="EmailConatctInfo">
+                        <form action="/">
+                            <label for="email">
+                                Email address:
+                                <input type="email" name="email" id="email" />
+                            </label>
+                            <div class="NameSecrtion">
+                                <label for="firstName">
+                                    First name:
+                                    <input type="text" id="first" />
+                                </label>
+                                <label for="lastName">
+                                    Last name:
+                                    <input type="text" />
+                                </label>
+                            </div>
+                            <div class="NameSecrtion">
+                                <label for="tel">
+                                    Phone number:
+                                    <input type="tel" name="tel" id="tel" />
+                                </label>
+                                <label for="lastName">
+                                    Flight no. way there:
+                                    <input type="text" placeholder="BR075" />
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="termsAndContadions">
+                        <div class="CheckContactInfo Conditions">
+                            <input type="checkbox" name="checked" id="checked" />
+                            <p>
+                                Accept the <span>Terms And Conditions</span> and the
+                                <span>Privacy policy</span>
+                            </p>
+                        </div>
+                        <button>Book now</button>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <!-- TODO: Right Container -->
+                    <div class="right-container">
+                        <div class="rightContainerInfo">
+                            <div class="rightContainerMap">
+                                <img src="~/Content/HomeTheme/assets/staticmap.png" alt="map">
+                            </div>
+                            <div class="rightContainerDetails">
+                                <div class="rightContainerDetailsInfo">
+                                    <strong>From:</strong>
+                                    <p>London Luton Airport (LTN) London UK</p>
+                                </div>
+                                <div class="rightContainerDetailsInfo">
+                                    <strong>To:</strong>
+                                    <p>London Gatwick Airport (LGW) London, West Sussex, UK</p>
+                                </div>
+                                <div class="rightContainerDetailsInfo">
+                                    <strong>On:</strong>
+                                    <p>03-03-2023 00:50</p>
+                                    <p>Distance: 97.3 km</p>
+                                    <p>Probable duration: 126 min</p>
+                                </div>
+                                <div class="buttonInfo">
+                                    <button>Edit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

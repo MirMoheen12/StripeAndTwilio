@@ -1,547 +1,578 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
     Layout = null;
 }
-<!--<script defer src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap&language=en&key=AIzaSyDetVuTnBlaepZ7h7VN-A-s8saBo40E5t4" type="text/javascript"></script>
-
-<div id="homepage-block-3" data-zs-speed="12000" data-zs-interval="7000" data-zs-bullets="false" data-zs-switchSpeed="4000" data-zs-src='["~/Content/assets/images/_homepage-3-2-bg.jpg", "~/Content/assets/images/_homepage-3-bg.jpg"]'>
-    <div class="container">
-
-        <section class="form-taxi-short">
-            <div class="container">
-                <form id="distance_form">
-                    <h3 class="aligncenter">Get Taxi <span class="yellow">Online</span></h3>-->
-                    @*<div class="menu-types row" >
-                            <a href="#" data-value="1" class="type-1 active col-xs-2">Standart</a>
-                            <a href="#" data-value="2" class="type-2 col-xs-2">Business</a>
-                            <a href="#" data-value="3" class="type-3 red col-xs-2">Vip</a>
-                            <a href="#" data-value="4" class="type-4 col-xs-2">Bus-Minivan</a>
-                            <input type="hidden" name="type-value" class="type-value ajaxField" value="1">
-                        </div>*@
-                    <!--<div class="row form-with-labels">
-
-                        <div class="row form-with-labels">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="text" name="from" id="from_places" placeholder="From Address..." class=" required"><span class="fa fa-map-marker"></span>
-                                    <input id="origin" name="origin" required="" type="hidden" />
-
-
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="text" name="to" id="to_places" placeholder="Destination" class="ajaxField required"><span class="fa fa-map-marker"></span>
-                                    <input id="destination" name="destination" required="" type="hidden" />
-
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div style=" text-align: left;">Select date</div>
-                                <div class="form-group">
-
-                                    <input type="date" id="bookdate" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="text" value="" class="ajaxField required">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div style=" text-align: left;">Select time</div>
-                                <div class="form-group">
-                                    <input type="time" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="text" value="" class="ajaxField required">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="number" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" id="bookpassenger" placeholder="Passenger" min="0" class="ajaxField required">
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="number" style="width: 100%; font-size: 16px; display: block; margin: 0 auto; /* margin-bottom: 24px; */ background: #fff; padding: 12px 18px; border: 1px solid #E6E6E6; -webkit-border-radius: 3px; -webkit-background-clip: padding-box; -moz-border-radius: 3px; -moz-background-clip: padding; border-radius: 3px; background-clip: padding-box;" name="text" id="Bagsbook" value="" placeholder="Luggage" class="ajaxField required">
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <input class="btn btn-lg btn-yellow aligncenter" type="submit" value="Calculate" />
-                </form>
-
-
-            </div>
-        </section>
-
-    </div>
-</div>
-
-<form id="formmintid" method="post" action="~/Home/Index">
-    <input name="Totalminutes" type="number" id="mintid" hidden />
-    <input name="Fromloc" type="text" id="Fromloc" hidden />
-    <input name="Toloc" type="text" id="Toloc" hidden />
-    <input name="Passenger" type="number" id="Passenger" hidden />
-    <input name="Luggage" type="number" id="Luggage" hidden />
-    <input name="bookingdate" type="date" id="bookingdate" hidden />
-    <button type="submit" hidden>save</button>
-</form>
-
-<div class="homepage-block-yellow-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <h3><span class="fa fa-phone"></span> 800-5-800</h3>
-            </div>
-            <div class="col-lg-2 col-md-6  col-sm-6">
-                <h4><span class="fa fa-skype"></span> Gettaxipark</h4>
-            </div>
-            <div class="col-lg-5 col-md-6  col-sm-6">
-                <h4><span class="fa fa-map-marker"></span> 43 2-nd Avenue,  New York,  29004-7153</h4>
-            </div>
-            <div class="col-lg-2 col-md-6  col-sm-6">
-                <a href="#" class="btn btn-black-bordered btn-lg pull-right">Our Tariffs</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<section id="tariffs">
-    <div class="container">
-        <h4 class="yellow">See Our</h4>
-        <h2 class="h1">Tariffs</h2>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="item matchHeight">
-                    <div class="image"><img src="~/Content/assets/images/_tariff-1.png" class="full-width" alt="Tariff"></div>
-                    <h4>Standart</h4>
-                    <p>Standard sedan for a drive around the city at your service</p>
-                    <div class="price">$2<span>/km</span></div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="item matchHeight">
-                    <div class="image"><img src="~/Content/assets/images/_tariff-2.png" class="full-width" alt="Tariff"></div>
-                    <h4>Business</h4>
-                    <p>Standard sedan for a drive around the city at your service</p>
-                    <div class="price">$2,7<span>/km</span></div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="item matchHeight vip">
-                    <div class="image"><img src="~/Content/assets/images/_tariff-3.png" class="full-width" alt="Tariff"></div>
-                    <h4 class="red">Vip</h4>
-                    <p>Standard sedan for a drive around the city at your service</p>
-                    <div class="price">$5<span>/km</span></div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="item matchHeight">
-                    <div class="image"><img src="~/Content/assets/images/_tariff-4.png" class="full-width" alt="Tariff"></div>
-                    <h4>Bus-minivan</h4>
-                    <p>Standard sedan for a drive around the city at your service</p>
-                    <div class="price">$4,5<span>/km</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="car-block">
-    <div class="car-right animation-block"><img src="~/Content/assets/images/_car-big-side.png" alt="Car"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <h4 class="yellow">For Drivers</h4>
-                <h2 class="h1">Do You Want To Earn With Us?</h2>
-            </div>
-            <div class="col-md-6">
-                <p>Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur dapibus pulvinar, sapien eros sodales ante, euismod aliquet nulla metus a mauris. </p>
-
-                <ul class="check two-col strong">
-                    <li>Luxury cars</li>
-                    <li>No fee</li>
-                    <li>Weekly payment</li>
-                    <li>Fixed price</li>
-                    <li>Good application</li>
-                    <li>Stable orders</li>
-                </ul>
-
-                <a href="#" class="btn btn-yellow btn-lg btn-white">Become a Driver</a>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="testimonials">
-    <hr class="lg">
-    <div class="container">
-        <h4 class="yellow">Happy Client's</h4>
-        <h2 class="h1">Testimonials</h2>
-
-        <div class="swiper-container row" id="testimonials-slider">
-            <div class="swiper-wrapper">
-                <div class="col-md-4 col-sm-6 swiper-slide">
-                    <div class="inner matchHeight">
-                        <div class="text">
-                            <p>Nullam orci dui, dictum et magna sollicitudin, tempor blandit erat. Maecenas suscipit tellus sit amet augue placerat fringilla a id lacus. Fusce tincidunt in leo lacinia condimentum.</p>
-                        </div>
-                        <div class="quote">
-                            <span class="fa fa-quote-left"></span>
-                            <div class="name">Anastasia Stone</div>
-                            <img src="~/Content/assets/images/_client-1.jpg" alt="Client">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 swiper-slide">
-                    <div class="inner matchHeight">
-                        <div class="text">
-                            <p>Suspendisse nec arcu sed nibh lacinia pretium. Phasellus eros ligula, mattis id rutrum non, eleifend vitae lacus. </p>
-                        </div>
-                        <div class="quote">
-                            <span class="fa fa-quote-left"></span>
-                            <div class="name">Steven Rashford</div>
-                            <img src="~/Content/assets/images/_client-4.jpg" alt="Client">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 swiper-slide">
-                    <div class="inner matchHeight">
-                        <div class="text">
-                            <p>Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur dapibus pulvinar, sapien eros sodales ante, euismod aliquet nulla metus a mauris. </p>
-                        </div>
-                        <div class="quote">
-                            <span class="fa fa-quote-left"></span>
-                            <div class="name">Patrick James</div>
-                            <img src="~/Content/assets/images/_client-5.jpg" alt="Client">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 swiper-slide">
-                    <div class="inner matchHeight">
-                        <div class="text">
-                            <p>Nullam orci dui, dictum et magna sollicitudin, tempor blandit erat. Maecenas suscipit tellus sit amet augue placerat fringilla a id lacus. Fusce tincidunt in leo lacinia condimentum.</p>
-                        </div>
-                        <div class="quote">
-                            <span class="fa fa-quote-left"></span>
-                            <div class="name">Anastasia Stone</div>
-                            <img src="~/Content/assets/images/_client-1.jpg" alt="Client">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 swiper-slide">
-                    <div class="inner matchHeight">
-                        <div class="text">
-                            <p>Suspendisse nec arcu sed nibh lacinia pretium. Phasellus eros ligula, mattis id rutrum non, eleifend vitae lacus. </p>
-                        </div>
-                        <div class="quote">
-                            <span class="fa fa-quote-left"></span>
-                            <div class="name">Steven Rashford</div>
-                            <img src="~/Content/assets/images/_client-4.jpg" alt="Client">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 swiper-slide">
-                    <div class="inner matchHeight">
-                        <div class="text">
-                            <p>Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur dapibus pulvinar, sapien eros sodales ante, euismod aliquet nulla metus a mauris. </p>
-                        </div>
-                        <div class="quote">
-                            <span class="fa fa-quote-left"></span>
-                            <div class="name">Patrick James</div>
-                            <img src="~/Content/assets/images/_client-5.jpg" alt="Client">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="arrows">
-                <a href="#" class="arrow-left fa fa-caret-left"></a>
-                <a href="#" class="arrow-right fa fa-caret-right"></a>
-            </div>
-        </div>
-    </div>
-</section>
-<div id="homepage-banners">
-    <div class="container">
-        <div class="row">
-            <a href="#" class="col-md-6 col-sm-6 col-ms-6"><img src="~/Content/assets/images/_banner-1.png" class="full-width" alt="Banner"></a>
-            <a href="#" class="col-md-6 col-sm-6 col-ms-6"><img src="~/Content/assets/images/_banner-2.png" class="full-width" alt="Banner"></a>
-        </div>
-    </div>
-</div>
-
-<section id="partners">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-12">
-                <h4 class="black margin-0">Our partners</h4>
-                <h2 class="white margin-0">and clients</h2>
-            </div>
-            <div class="col-md-9 col-sm-12">
-                <div class="row items">
-                    <div class="col-md-5ths col-sm-3 col-ms-4 col-xs-6"><a href="#"><img src="~/Content/assets/images/_partner-1.png" alt="Partner"></a></div>
-                    <div class="col-md-5ths col-sm-3 col-ms-4 col-xs-6"><a href="#"><img src="~/Content/assets/images/_partner-2.png" alt="Partner"></a></div>
-                    <div class="col-md-5ths col-sm-3 col-ms-4 col-xs-6"><a href="#"><img src="~/Content/assets/images/_partner-3.png" alt="Partner"></a></div>
-                    <div class="col-md-5ths col-sm-3 col-ms-4 col-xs-6"><a href="#"><img src="~/Content/assets/images/_partner-4.png" alt="Partner"></a></div>
-                    <div class="col-md-5ths col-sm-3 col-ms-4 col-xs-6"><a href="#"><img src="~/Content/assets/images/_partner-5.png" alt="Partner"></a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-<script type="text/javascript">
-    function initMap() {
-        // add input listeners
-        google.maps.event.addDomListener(window, "load", function () {
-            var from_places = new google.maps.places.Autocomplete(
-                document.getElementById("from_places")
-            );
-            var to_places = new google.maps.places.Autocomplete(
-                document.getElementById("to_places")
-            );
-
-            google.maps.event.addListener(
-                from_places,
-                "place_changed",
-                function () {
-                    var from_place = from_places.getPlace();
-                    var from_address = from_place.formatted_address;
-                    $("#origin").val(from_address);
-                }
-            );
-
-            google.maps.event.addListener(
-                to_places,
-                "place_changed",
-                function () {
-                    var to_place = to_places.getPlace();
-                    var to_address = to_place.formatted_address;
-                    $("#destination").val(to_address);
-                }
-            );
-        });
-        // calculate distance
-        function calculateDistance() {
-            var origin = $("#origin").val();
-            var destination = $("#destination").val();
-            var service = new google.maps.DistanceMatrixService();
-            service.getDistanceMatrix(
-                {
-                    origins: [origin],
-                    destinations: [destination],
-                    travelMode: google.maps.TravelMode.DRIVING,
-                    unitSystem: google.maps.UnitSystem.IMPERIAL, // miles and feet.
-                    // unitSystem: google.maps.UnitSystem.metric, // kilometers and meters.
-                    avoidHighways: false,
-                    avoidTolls: false,
-                },
-                callback
-            );
-        }
-        // get distance results
-        function callback(response, status) {
-            if (status != google.maps.DistanceMatrixStatus.OK) {
-                $("#result").html(err);
-            } else {
-                var origin = response.originAddresses[0];
-                console.log(origin);
-                var destination = response.destinationAddresses[0];
-                console.log(destination);
-                if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
-                    $("#result").html(
-                        "Better get on a plane. There are no roads between " +
-                        origin +
-                        " and " +
-                        destination
-                    );
-                } else {
-                    var distance = response.rows[0].elements[0].distance;
-                    console.log(distance);
-                    var duration = response.rows[0].elements[0].duration;
-                    console.log(duration);
-                    console.log(response.rows[0].elements[0].distance);
-                    var distance_in_kilo = distance.value / 1000; // the kilom
-                    var distance_in_mile = distance.value / 1609.34; // the mile
-                    console.log(distance_in_kilo);
-                    console.log(distance_in_mile);
-                    var duration_text = duration.text;
-                    var duration_value = duration.value;
-                    //alert(duration_value);
-                    $("#mintid").val(duration_value);
-                    var Passenge = $('#bookpassenger').val();
-                    $("#Passenger").val(Passenge);
-                    var Luggage = $('#Bagsbook').val();
-                    $("#Luggage").val(Luggage);
-                    var fp = $('#from_places').val();
-                    $("#Fromloc").val(fp);
-                    var tp = $('#to_places').val();
-                    $("#Toloc").val(tp);
-                    var bookdate = $('#bookdate').val();
-                    $("#bookingdate").val(bookdate);
-                    $('form#formmintid').submit();
-
-
-                    //$("#mile").html(
-                    //    `Distance in Miles: ${distance_in_mile.toFixed(2)}`
-                    //);
-                    //$("#kilo").html(
-                    //    `Distance in Kilometre: ${distance_in_kilo.toFixed(2)}`
-                    //);
-                    //$("#text").html(`Distance in Text: ${duration_text}`);
-                    //$("#minute").html(`Distance in Minutes: ${duration_value}`);
-                    //$("#from").html(`Distance From: ${origin}`);
-                    //$("#to").text(`Distance to: ${destination}`);
-                }
-            }
-        }
-        // print results on submit the form
-        $("#distance_form").submit(function (e) {
-            e.preventDefault();
-            calculateDistance();
-        });
-    }
-</script>-->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-    <link href="~/Content/HomeTheme/styles.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Taxi_Project</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+ 
+    <link href="~/Content/HomeTheme/Home.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/ee9cae1b8f.js"
+            crossorigin="anonymous"></script>
 </head>
 <body>
-    <header style="background-image: url(./Content/HomeTheme/images/Background_1440x1080-1024x768.jpg);
-   background-repeat: no-repeat; object-fit: cover; background-size: 100%; width: 100%; height: 777px">
-        <div class="wrapper">
-            <nav>
-                <div class="main-logo">
-                    <img src="~/Content/HomeTheme/images/logo.png" alt="">
+    <section class="topBackgroundImage">
+        <!-- TODO: Navbar -->
+        <section>
+            <div class="navbar">
+                <img class="logo" src="~/Content/HomeTheme/assets/logo.png" alt="logo" />
+                <div class="CountriesFlags">
+                    <div class="CountriesFlags-info">
+                        <img class="flag"
+                             src="~/Content/HomeTheme/assets/Flag_of_the_United_Kingdom 1.png"
+                             alt="flag" />
+                        <i class="fa-solid fa-caret-down"></i>
+                        <span class="horihentalLine"></span>
+                        <p>Helpdesk</p>
+                    </div>
+                    <i class="fa-solid fa-bars"></i>
                 </div>
-                <div class="options">
-                    <img class="flag" src="~/Content/HomeTheme/images/Flag_of_the_United_Kingdom 1.png" alt="">
-                    <img class="drop-icon" src="~/Content/HomeTheme/images/dropdown.svg" alt="">
-                    <img class="line31" src="~/Content/HomeTheme/images/Line 31.svg" alt="">
-                    <p class="help-option">Helpdesk</p>
-                </div>
-            </nav>
-            <!--Navbar ends-->
-            <div class="hero-section">
+            </div>
+        </section>
+
+        <!-- TODO: Container -->
+        <section>
+            <div class="container">
                 <div class="left">
-                    <p class="heading">Lorem ipsum dolor sit amet, consectetur admpus lacus. Integer ut odioti</p>
-                    <img src="~/Content/HomeTheme/images/Line Vector.svg" alt="" style="margin-top: 8px;">
-                    <p class="sub-heading">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Vivamus pulvinar, risus eget fermentum efficitur, augue sapien tincidunt lacus, nec
+                    <h1>
+                        Lorem ipsum dolor sit amet, consectetur admpus lacus. Integer ut
+                        odioti
+                    </h1>
+                    <img class="underLine" src="~/Content/HomeTheme/assets/LineVector.png" alt="Line" />
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                        pulvinar, risus eget fermentum efficitur, augue sapien tincidunt
+                        lacus, nec
                     </p>
-                    <div class="review-pics">
-                        <img src="~/Content/HomeTheme/images/Ellipse 3.png" alt="" class="r-pic">
-                        <img src="~/Content/HomeTheme/images/Ellipse 4.png" alt="" style="margin-left: -20px;" class="r-pic">
-                        <img src="~/Content/HomeTheme/images/Ellipse 5.png" alt="" style="margin-left: -20px;" class="r-pic">
-                        <img src="~/Content/HomeTheme/images/Ellipse 6.png" alt="" style="margin-left: -20px;" class="r-pic">
-                        <p style="background-image: url(~/Content/HomeTheme/images/Ellipse\ 7.svg); background-repeat: no-repeat; width: 63px;
-                height: 63px; display: flex; font-size: 20px; margin-left: -20px;
-                justify-content: center; align-items: center; color: white; font-weight: bold;">3+</p>
+                    <!-- <div> -->
+                    <div class="avatorCharacters">
+                        <img src="~/Content/HomeTheme/assets/avator-4.png" alt="avator-4" />
+                        <img src="~/Content/HomeTheme/assets/avator-4.png" alt="avator-4" />
+                        <img src="~/Content/HomeTheme/assets/avator-4.png" alt="avator-4" />
+                        <img src="~/Content/HomeTheme/assets/avator-4.png" alt="avator-4" />
+                        <span>3+</span>
                     </div>
-
-                    <div class="review-stars">
-                        <div>
-                            <img src="images/star.png" alt="">
-                            <img src="~/Content/HomeTheme/images/star.png" alt="">
-                            <img src="~/Content/HomeTheme/images/star.png" alt="">
-                            <img src="~/Content/HomeTheme/images/star.png" alt="">
-                            <img src="~/Content/HomeTheme/images/star.png" alt="">
-                        </div>
-                        <p class="review-text" style="padding-top: 13px;">8 (Reviews)</p>
+                    <div class="Rating">
+                        <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                        <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                        <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                        <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                        <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                        <span>8 (Reviews)</span>
                     </div>
                 </div>
-                <div class="right">
-                    <form action="#" class="header-form">
-                        <p class="from-text">From</p>
-                        <div class="input-from">
-                            <span class="search-icon"><img src="~/Content/HomeTheme/images/Vector.svg" alt=""></span>
-                            <input class="from-in form-control" type="text" placeholder="Airport,address,station,port">
-                        </div>
-                        <p class="to-text">To</p>
-                        <div class="input-from">
-                            <span class="search-icon"><img src="~/Content/HomeTheme/images/Vector.svg" alt=""></span>
-                            <input class="from-in form-control" type="text" placeholder="Airport,address,station,port">
-                        </div>
-                        <div class="passenger_luggage">
-                            <div>
-                                <p style="margin-top: 10px; margin-bottom: 10px;">passengers</p>
-                                <div class="input-from" style="height: 49px;">
-                                    <span class="passenger_luggage-icon"><img src="~/Content/HomeTheme/images/Vector (1).svg" alt=""></span>
-                                    <input class="from-in form-control" type="text" placeholder="2" style="text-align:end;">
-                                </div>
-                            </div>
-                            <div>
-                                <p style="margin-top: 10px; margin-bottom: 10px;">Luggage</p>
-                                <div class="input-from" style="height: 49px;">
-                                    <span class="passenger_luggage-icon"><img src="~/Content/HomeTheme/images/Vector (2).svg" alt=""></span>
-                                    <input class="from-in form-control" type="text" placeholder="2" style="text-align:end;">
-                                </div>
-                            </div>
 
-                        </div>
-                        <p class="date_time">pickup date & Time</p>
-                        <div class="input-date-time">
-                            <div class="input-td" style="height: 49px;"
-                                 style=" border-top-right-radius: 0%;">
-                                <span class="date-time-icon"><i class="fa-solid fa-calendar-days"></i></span>
-                                <input class="form-control td-in" type="text" placeholder="28-03-2023">
+                <div class="Right">
+                    <div class="right">
+                        <form action="" class="FormSub">
+                            <label for="search">
+                                Form
+                                <span class="searchSpan">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input type="search"
+                                           name="search"
+                                           id="search"
+                                           placeholder="Airport, address, station, port" />
+                                </span>
+                            </label>
+                            <label for="search">
+                                To
+                                <span class="searchSpan">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input type="search"
+                                           name="search"
+                                           id="search"
+                                           placeholder="Airport, address, station, port" />
+                                </span>
+                            </label>
+                            <div class="PassengersLuggage">
+                                <label for="Passengers">
+                                    Passengers
+                                    <span class="Passengers">
+                                        <img src="~/Content/HomeTheme/assets/Passengers.png" alt="">
+                                        <input type="text"
+                                               name="Passengers"
+                                               id="Passengers"
+                                               placeholder="2" />
+                                    </span>
+                                </label>
+                                <label for="Luggage">
+                                    Luggage
+                                    <span class="Luggage">
+                                        <img src="~/Content/HomeTheme/assets/Luggage.png" alt="">
+                                        <input type="text"
+                                               name="Luggage"
+                                               id="Luggage"
+                                               placeholder="2" />
+                                    </span>
+                                </label>
                             </div>
-                            <div class="line32">
-                                <img src="~/Content/HomeTheme/images/Line 32.svg" alt="">
-                            </div>
-                            <div class="input-td" style="height: 49px;" style="border-top-right-radius: 0;">
-                                <span class="date-time-icon"><i class="fa-regular fa-clock"></i></span>
-                                <input class="form-control td-in" type="text" placeholder="20:05">
-                            </div>
-                        </div>
-                        <button class="search-btn">Search</button>
-                    </form>
+                            <label for="Luggage" s>
+                                Pickup date & Time
+                                <span class="formdate">
+                                    <input type="date"
+                                           name="Luggage"
+                                           id="Luggage"
+                                           placeholder="2" />
+                                    <input type="time"
+                                           name="Luggage"
+                                           id="Luggage"
+                                           placeholder="2" />
+                                </span>
+                                <button class="submitButton">Search</button>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="shade">
+                    <div class="lineSection"><span>1</span> Journey</div>
+                    <span class="line"></span>
+                    <div class="lineSection"><span>2</span> Vehicle</div>
+                    <span class="line"></span>
+                    <div class="lineSection"><span>3</span> Details</div>
+                    <span class="line"></span>
+                    <div class="lineSection"><span>4</span> Pay</div>
+                    <span class="line"></span>
                 </div>
             </div>
-            <!--Hero section ends-->
-            <div class="route-options">
-                <div class="first">
-                    <img src="~/Content/HomeTheme/images/1.png" alt="" style="width: 32px;
-          height: 32px;">
-                    <p class="first-text">Journey</p>
-                    <img src="~/Content/HomeTheme/images/div.png" alt="" class="straight-line">
-                </div>
-                <div class="second">
-                    <img src="~/Content/HomeTheme/images/div (1).png" alt="" style="width: 32px;
-            height: 32px;">
-                    <p class="secnd-text">Vehicle</p>
-                    <img src="~/Content/HomeTheme/images/div.png" alt="" class="straight-line">
-                </div>
-                <div class="third">
-                    <img src="~/Content/HomeTheme/images/div (2).png" alt="" style="width: 32px;
-                height: 32px;">
-                    <p class="third-text">Vehicle</p>
-                    <img src="~/Content/HomeTheme/images/div.png" alt="" class="straight-line">
-                </div>
-                <div class="fourth">
-                    <img src="~/Content/HomeTheme/images/div (3).png" alt="" style="width: 32px;
-             height: 32px;">
-                    <p class="fourth-text">Pay and Book</p>
+        </section>
+    </section>
+
+    <!-- TODO: Book And Banner Section -->
+    <!-- TODO: Book Section -->
+    <section>
+        <div class="BookContainer">
+            <div class="Info-BookContainer">
+                <p>Arranged in a minute</p>
+                <h1>
+                    Book an airport transfer in <br>
+                    3 easy steps
+                </h1>
+            </div>
+            <div>
+                <div class="flex-BookContainer flex-wrap">
+                    <div class="flex-item-Banner">
+                        <div class="Banner-box">
+                            <img src="~/Content/HomeTheme/assets/Advance.png" alt="">
+                        </div>
+                        <h1>Schedule in advance</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar, risusntum efficitur, augue</p>
+                    </div>
+                    <div class="flex-item-Banner">
+                        <div class="Banner-box">
+                            <img src="~/Content/HomeTheme/assets/Vehicle.png" alt="">
+                        </div>
+                        <h1>Schedule in advance</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar, risusntum efficitur, augue</p>
+                    </div>
+                    <div class="flex-item-Banner">
+                        <div class="Banner-box">
+                            <img src="~/Content/HomeTheme/assets/Plans.png" alt="">
+                        </div>
+                        <h1>Schedule in advance</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar, risusntum efficitur, augue</p>
+                    </div>
+
                 </div>
             </div>
-            <!--route section ends-->
         </div>
-    </header>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" integrity="sha512-2bMhOkE/ACz21dJT8zBOMgMecNxx0d37NND803ExktKiKdSzdwn+L7i9fdccw/3V06gM/DBWKbYmQvKMdAA9Nw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </section>
 
-    <script src="~/Content/HomeTheme/script.js"></script>
+
+    <!-- TODO: Banner Section -->
+    <section>
+        <div class="Banner">
+            <div class="left-Banner">
+                <h1>Lorem ipsum dolor sit amet, adipiscing elit. Curabitur sodales</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco Lorem ipsum dolor sit amet, consecteturrud exercitation ullamco Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci</p>
+                <button>Learn more</button>
+            </div>
+            <div class="right-Banner">
+                <img src="~/Content/HomeTheme/assets/Banner.png" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TODO: Second Section trustpiolt -->
+
+    <section class="sportcustomerSection">
+        <div class="leftSport">
+            <div class="subLeftSport">
+                <h1>How we support our customers all over the world</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+                    sodales risus in lorem volutpat condimentum. Aliquam commodo
+                    maximusegestas vitae nisl vitae, scelerisque pulvinar mauris. tempus
+                    bibendum pellentesque ut elit. Donec rutrum egestas s
+                </p>
+                <div class="ratingsportcustomerSection">
+                    <div class="ratingstars">
+                        <div class="Rating sportRating-2">
+                            <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                            <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                            <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                            <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                            <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                        </div>
+                        <p>4.9 / 5 rating</p>
+                        <span>Service</span>
+                    </div>
+                    <div class="ratingstars">
+                        <div class="Rating sportRating-2">
+                            <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                            <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                            <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                            <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                            <span><i class="fa-sharp fa-solid fa-star"></i></span>
+                        </div>
+                        <p>4.9 / 5 rating</p>
+                        <span>Service</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rightSport">
+            <div class="rightSport-info">
+                <span><img src="~/Content/HomeTheme/assets/Wave.png" alt="wave" /></span>
+                <div class="sports-details">
+                    <h3>15+ Years</h3>
+                    <p>
+                        orem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+                    </p>
+                </div>
+            </div>
+            <div class="rightSport-info">
+                <span><img src="~/Content/HomeTheme/assets/world.png" alt="wrold" /></span>
+                <div class="sports-details">
+                    <h3>130+ Countries</h3>
+                    <p>
+                        orem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+                    </p>
+                </div>
+            </div>
+            <div class="rightSport-info">
+                <span><img src="~/Content/HomeTheme/assets/Person.png" alt="Users" /></span>
+                <div class="sports-details">
+                    <h3>1M Users</h3>
+                    <p>
+                        orem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TODO: Section Three--- 3 -->
+    <section>
+        <section class="trustpilot">
+            <div class="trustpilotHed">
+                <img src="~/Content/HomeTheme/assets/Star.png" alt="start" />
+                <h4>Trustpilot</h4>
+            </div>
+            <div class="trustpilotReviews">
+                <p>Reviews 67,044 · Great <span>|</span></p>
+                <img src="~/Content/HomeTheme/assets/WhiteStar.png" alt="" />
+                <img src="~/Content/HomeTheme/assets/WhiteStar.png" alt="" />
+                <img src="~/Content/HomeTheme/assets/WhiteStar.png" alt="" />
+                <img src="~/Content/HomeTheme/assets/WhiteStar.png" alt="" />
+                <img src="~/Content/HomeTheme/assets/WhiteStar.png" alt="" />
+                <span>4</span>
+            </div>
+            <div class="trustpilotArrows">
+                <!-- arrow icons -->
+                <img src="~/Content/HomeTheme/assets/leftArrow.png" alt="" />
+                <img src="~/Content/HomeTheme/assets/rightArrow.png" alt="" />
+            </div>
+
+            <div class="trustpilotBoxScroll">
+                <div class="scroll">
+                    <div class="trustpilotBox">
+                        <!-- div for scroll -->
+                        <div>
+                            <h2>Reynald Dela Pedra</h2>
+                            <p>8 reviews</p>
+                        </div>
+                        <div class="trustpilotStars">
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                        </div>
+                        <p class="trustpilotDesc">
+                            Wath the sing up,about details,we're is forme Wath the sing
+                            up,about details,we're is forme Wath the sing up,about
+                            details,we're is forme
+                        </p>
+
+                        <div class="trustpilotActiveDetails">
+                            <span></span>
+                            <p>9 days ago</p>
+                        </div>
+                    </div>
+                    <div class="trustpilotBox">
+                        <!-- div for scroll -->
+                        <div>
+                            <h2>Reynald Dela Pedra</h2>
+                            <p>8 reviews</p>
+                        </div>
+                        <div class="trustpilotStars">
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                        </div>
+                        <p class="trustpilotDesc">
+                            Wath the sing up,about details,we're is forme Wath the sing
+                            up,about details,we're is forme Wath the sing up,about
+                            details,we're is forme
+                        </p>
+                        <div class="trustpilotActiveDetails">
+                            <span></span>
+                            <p>9 days ago</p>
+                        </div>
+                    </div>
+
+                    <div class="trustpilotBox">
+                        <!-- div for scroll -->
+                        <div>
+                            <h2>Reynald Dela Pedra</h2>
+                            <p>8 reviews</p>
+                        </div>
+                        <div class="trustpilotStars">
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                        </div>
+                        <p class="trustpilotDesc">
+                            Wath the sing up,about details,we're is forme Wath the sing
+                            up,about details,we're is forme Wath the sing up,about
+                            details,we're is forme
+                        </p>
+                        <div class="trustpilotActiveDetails">
+                            <span></span>
+                            <p>9 days ago</p>
+                        </div>
+                    </div>
+                    <div class="trustpilotBox">
+                        <!-- div for scroll -->
+                        <div>
+                            <h2>Reynald Dela Pedra</h2>
+                            <p>8 reviews</p>
+                        </div>
+                        <div class="trustpilotStars">
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                        </div>
+                        <p class="trustpilotDesc">
+                            Wath the sing up,about details,we're is forme Wath the sing
+                            up,about details,we're is forme Wath the sing up,about
+                            details,we're is forme
+                        </p>
+                        <div class="trustpilotActiveDetails">
+                            <span></span>
+                            <p>9 days ago</p>
+                        </div>
+                    </div>
+                    <div class="trustpilotBox">
+                        <!-- div for scroll -->
+                        <div>
+                            <h2>Reynald Dela Pedra</h2>
+                            <p>8 reviews</p>
+                        </div>
+                        <div class="trustpilotStars">
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                            <img src="~/Content/HomeTheme/assets/star-white.svg.png" alt="" />
+                        </div>
+                        <p class="trustpilotDesc">
+                            Wath the sing up,about details,we're is forme Wath the sing
+                            up,about details,we're is forme Wath the sing up,about
+                            details,we're is forme
+                        </p>
+                        <div class="trustpilotActiveDetails">
+                            <span></span>
+                            <p>9 days ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- TODO: Section  FAQ --4 -->
+
+    <section>
+        <div class="Container-QuestionFAQ">
+            <div class="faqHead">
+                <p>24/7 AVAILABLE</p>
+                <h1>Customer service</h1>
+                <h3>Popular questions</h3>
+            </div>
+            <div class="FAQ">
+                <ul class="accordion">
+                    <li>
+                        <input type="radio" name="accordion" id="first" checked />
+                        <label for="first">
+                            Lorem ipsum dolor sit amet consectetur. Diam volutpat quam id
+                            vitae venenatis. <span class="arrow"></span><i class="fa-solid fa-chevron-right"></i>
+                        </label>
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="accordion" id="second" />
+                        <label for="second">
+                            Lorem ipsum dolor sit amet consectetur. Diam volutpat quam id
+                            vitae venenatis. <span class="arrow"></span><i class="fa-solid fa-chevron-right"></i>
+                        </label>
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="accordion" id="third" />
+                        <label for="third">
+                            Lorem ipsum dolor sit amet consectetur. Diam volutpat quam id
+                            vitae venenatis. <span class="arrow"></span><i class="fa-solid fa-chevron-right"></i>
+                        </label>
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="accordion" id="four" />
+                        <label for="four">
+                            Lorem ipsum dolor sit amet consectetur. Diam volutpat quam id
+                            vitae venenatis. <span class="arrow"></span><i class="fa-solid fa-chevron-right"></i>
+                        </label>
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                    </li>
+                    <p class="showMoew">Show More Questions ></p>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="AirPortsContainer">
+            <div class="faqHead">
+                <p>What is your next destination</p>
+                <h1>Popular Airports</h1>
+            </div>
+
+            <div class="house-details">
+
+                <div class="gallery">
+                    <div class="gallery-img-1">
+                        <img src="~/Content/HomeTheme/assets/house-1.png" alt="#" />
+                    </div>
+                    <div><img src="~/Content/HomeTheme/assets/house-2.png" alt="#" /></div>
+                    <div><img src="~/Content/HomeTheme/assets/house-3.png" alt="#" /></div>
+                    <div><img src="~/Content/HomeTheme/assets/house-4.png" alt="#" /></div>
+                    <div><img src="~/Content/HomeTheme/assets/house-5.png" alt="#" /></div>
+                </div>
+            </div>
+            <div class="ShowMore">
+                <a href="#" class="contact-host">Show More</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <Section>
+        <div class="flex-container wrap">
+            <div class="flex-item logoItem">
+                <img src="~/Content/HomeTheme/assets/logo.png" alt="logo">
+                <p>Lorem ipsum dolor sit amet consectetur. Lobortis duis duis sed sit integer mauris gravida proin eget.</p>
+                <h4>Subscribe to Newsletter</h4>
+                <div class="footerInput">
+                    <input type="email" name="email" id="email" placeholder="youremail@address.com">
+                    <span><i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <div class="flex-item">
+                <h4>Legal</h4>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">Responsible disclosure</a></li>
+            </div>
+            <div class="flex-item">
+                <h4>Work with us</h4>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Become a partner</a></li>
+                <li><a href="#">Login as partner</a></li>
+            </div>
+            <div class="flex-item">
+                <h4>Contact Us</h4>
+                <li><a href="#">+92 3057719301</a></li>
+                <li><a href="#">kaleemstudio787@gmail.com</a></li>
+                <div>
+                    <h4>Address</h4>
+                    <li><a href="#">Address Here</a></li>
+
+                </div>
+            </div>
+        </div>
+        <div class="footerEnd">
+            <div class="usefulLinks">
+                <a href="#">Terms</a>
+                <a href="#">Privacy </a>
+                <a href="#">Cookies</a>
+            </div>
+            <div class="socialIcons">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-facebook"></i>
+            </div>
+        </div>
+
+    </Section>
+
+
+
+
 </body>
 </html>
+

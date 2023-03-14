@@ -38,7 +38,7 @@ namespace StripeAndTwilio.Controllers
         public ActionResult pakageSelection()
         {
             var data2 = (BookingModel)Session["Bookmodel"];
-            int newmint = Convert.ToInt32(data2.Totalminutes) / 60;
+            int newmint = Convert.ToInt32(200) / 60;
             var data = db.Packages.ToList();
             for (int i = 0; i < data.Count; i++)
             {

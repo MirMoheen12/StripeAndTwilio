@@ -1,0 +1,342 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5% 7%;
+}
+.CountriesFlags{
+    display: flex;
+    margin: 0 5px;
+}
+.CountriesFlags-info{
+    display: flex;
+}
+.horihentalLine{
+    width: 3px;
+    height: 20px;
+    border-radius: 10px;
+    background: gray;
+    margin-right: 5px;
+}
+.fa-caret-down{
+    color: gray;
+    margin: 0 8px;
+}
+.CountriesFlags p{
+    color: gray;
+    font-weight: 500;
+}
+.fa-bars{
+    display: none;
+}
+.stepLine{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.setpProcess{
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+}
+.curcleOfSteps{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgb(131, 131, 131);
+    margin: 0 1rem;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lineOfSetps{
+    width: 5rem;
+    height: 4px;
+    border-radius: 12px;
+    background: gray;
+    margin: 0 1rem;
+}
+
+
+.container{
+    padding: 7%;
+}
+.vehicle{
+    font-weight: 700;
+    font-size: 30px;
+}
+.sub-container{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+}
+.subcar-container{
+    flex-basis: 68%;
+}
+.left-container{
+    margin-top: 2rem;
+    width: 100%;
+    min-width: 56vw;
+    padding: 2%;
+    border-radius: 13px;
+    background: #ffffff;
+    box-shadow:  5px 5px 10px #f3f3f3,
+                 -5px -5px 10px #f3f3f3;
+}
+.subLeftContainer{
+    width: 100%;
+    display: flex;
+}
+.subLeftContainerInfo{
+    flex-basis: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 2%;
+}
+.subLeftContainerInfo img{
+    width: 250px;
+    margin: 2%;
+}
+.addExtras{
+    outline: none;
+    border: none;
+    margin-top: 2%;
+    background: white;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    border: 1px solid #AFB6BE;
+    border-radius: 8px;
+    width: 100%;
+}
+.addExtras:active{
+    background-color: rgb(245, 245, 245);
+}
+.subRightContainer{
+    flex-basis: 50%;
+    margin: 0 1rem;
+}
+.MinMaxContainer{
+    display: flex;
+    font-weight: 600;
+    margin: 8px 0;
+    margin-right: 10px;
+}
+.MinMaxContainer p:nth-last-child(1){
+    margin-left: 10px;
+}
+.subLeftContainerDesc p{
+    margin: 8px 0;
+}
+.subLeftContainerTransfer p{
+    margin: 20px 0;
+    font-weight: 600;
+    color: gray;
+}
+
+/* TODO: line */
+.subLeftContainerTransferLine{
+    display: flex;
+    width: 100%;
+    height: 2px;
+    margin: 0.3rem ;
+    background: rgb(201, 201, 201);
+    border-radius: 13px;
+}
+.subRightContainerToalAmount{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.subRightContainerToalAmount p{
+    font-weight: 700;
+}
+.subRightContainerToalAmount del{
+    color: gray;
+}
+.subRightContainerTotal{
+    float: right;
+    font-weight: 800;
+}
+.subRightContainerTotal p{
+ color: rgb(250, 37, 37);
+ font-weight: 500;
+}
+.Select{
+    width: 100%;
+    padding: 1.3rem 0;
+    outline: none;
+    border: none;
+    background-color: #48A946;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.Select:active{
+    background:  #379c36 ;
+}
+
+
+
+
+
+.right-container{
+    flex-basis: 30%;
+    margin: 1%;
+    margin-top: 2rem;
+}
+.rightContainerInfo{
+    border-radius: 13px;
+    width: 100%;
+    border-radius: 13px;
+    border-radius: 13px;
+    background: #ffffff;
+    box-shadow:  5px 5px 10px #f3f3f3,
+                 -5px -5px 10px #f3f3f3;
+}
+.rightContainerMap{
+    padding: 2%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.rightContainerDetails{
+    padding: 2%;
+}
+.rightContainerDetails strong{
+    color: yellow;
+}
+.rightContainerDetailsInfo{
+    margin: 1rem 0;
+}
+.buttonInfo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.removeLarge{
+    display: none;
+}
+.buttonInfo button{
+    padding: 1rem 3rem;
+    outline: none;
+    border: none;
+    background-color: #48A946;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 3%;
+}
+
+
+
+
+
+.layout {
+  width: 100%;
+  height: 34vh;
+  background: #000;
+  display: flex;
+}
+
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem ;
+    border: 1px solid #B6B6B6;
+}
+.footer p{
+    font-size: 13px;
+    color: #5E6D7C;
+    font-weight: 600;
+}
+
+
+@media only screen and (max-width: 1010px){
+    .subcar-container{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .sub-container{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+@media only screen and (max-width: 1158px){
+    .stepLine{
+      display: none;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .navbar{
+        border-radius: 0px;
+    background: #ffffff;
+    box-shadow:  2px 2px 8px #bdbdbd;
+    }
+    .fa-bars{
+        display: block;
+    }
+    .CountriesFlags-info{
+        display: none;
+    }
+    .logo{
+        width: 100px;
+    }
+    .stepLine{
+        display: flex;
+        margin-top: 3rem;
+        font-size: 10px;
+    }
+    .curcleOfSteps{
+        width: 20px;
+        height: 20px;
+        margin: 0;
+        font-weight: 500;
+    }
+    .stepLine{
+            overflow: hidden;
+            display: none;
+    }
+    .lineOfSetps{
+        width: 3rem;
+        height: 2px;
+        border-radius: 12px;
+        background: gray;
+        margin: 0;
+    }
+    .setpProcess p{
+        font-size: 10px;
+        margin: 0 3px;
+    }
+    .subLeftContainer{
+        flex-direction: column;
+    }
+    .removeLarge{
+        display: block;
+        margin-bottom: 1rem;
+    }
+    .removeSmall{
+        display: none;
+    }
+
+}

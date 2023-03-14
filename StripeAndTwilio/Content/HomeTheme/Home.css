@@ -1,0 +1,1059 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+.topBackgroundImage{
+    background-image: url("assets/background.jpg");
+    /* height: 100vh; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;;
+    position: relative;
+    padding-bottom: 5%;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5% 7%;
+}
+.CountriesFlags{
+    display: flex;
+    margin: 0 5px;
+}
+.CountriesFlags-info{
+    display: flex;
+}
+.horihentalLine{
+    width: 3px;
+    height: 20px;
+    border-radius: 10px;
+    background: gray;
+    margin-right: 5px;
+}
+.fa-caret-down{
+    color: white;
+    margin: 0 8px;
+}
+.CountriesFlags p{
+    color: white;
+    font-weight: 500;
+}
+.fa-bars{
+    display: none;
+}
+.stepLine{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.setpProcess{
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+}
+.curcleOfSteps{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgb(131, 131, 131);
+    margin: 0 1rem;
+    color: rgb(32, 32, 32);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lineOfSetps{
+    width: 5rem;
+    height: 4px;
+    border-radius: 12px;
+    background: gray;
+    margin: 0 1rem;
+}
+
+
+
+/* TODO: First Section container --1*/
+.container{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 0 7%;
+    flex-direction: row;
+    margin: 5% 0;
+}
+.left{
+    flex-basis: 48%;
+}
+.left h1{
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+.left p{
+    margin: 1rem 0;
+}
+.avatorCharacters{
+    display: flex;
+    align-items: center;
+}
+.avatorCharacters img:nth-child(n+2){
+    width: 70px;
+    height: 70px;
+    margin-left: -30px;
+}
+.avatorCharacters span{
+    background-color:  #FFC728;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    margin-left: -30px;
+    border: 2px solid white;
+}
+.fa-sharp{
+    color: #FFC728;
+}
+
+
+
+/* TODO: RightSide of first Section */
+.Right{
+    flex: 48%;
+    margin: 0 2%;
+}
+.right{
+    flex-basis: 48%;
+    background: gray;
+    padding: 3% 2%;
+    background-color: #FFC728;
+    border-radius: 8px;
+    margin-left: 4rem;
+}
+.FormSub label{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    margin-bottom: 5px;
+}
+.searchSpan, .Passengers, .Luggage, .formdate{
+    display: flex;
+    background-color: white;
+    padding: 3%;
+    border-radius: 5px;
+    margin-top: 5px;
+    border: 2px solid rgb(204, 204, 204);
+    align-items: center;
+}
+.fa-magnifying-glass{
+    color: gray;
+    margin-right: 5px;
+}
+.searchSpan input{
+    outline: none;
+    width: 100%;
+    padding: 0 5px;
+    border: none;
+}
+.PassengersLuggage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.PassengersLuggage input{
+    background: transparent;
+}
+.Passengers, .Luggage{
+    width: 225px;
+}
+.Passengers{
+    margin-right: 5px;
+}
+.Passengers input, .Luggage input{
+    outline: none;
+    padding: 2%;
+    border: none;
+}
+.formdate input{
+    width: 100%;
+    outline: none;
+    border: none;
+    margin: 0 15px;
+}
+.submitButton{
+    outline: none;
+    border: none;
+    background: rgb(53, 196, 53);
+    font-weight: 600;
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 20px;
+    float: right;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/* TODO: Shade */
+.shade{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10vh;
+    background: black;
+    z-index: 100;
+    opacity: 100%;
+    padding: 0 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 50%;
+}
+.lineSection{
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    z-index: 100;
+}
+.lineSection span{
+    width: 20px;
+    height: 20px;
+    background: rgb(221, 221, 43);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+.line{
+    color: white;
+    background-color: white;
+    height: 2px;
+    width: 10%;
+    margin: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+/* TODO: Second Section sportcustomerSection ---2 */
+
+.sportcustomerSection{
+    display: flex;
+    align-items: center;
+    padding: 0 7%;
+    background: #F9F8FE;
+
+}
+.leftSport, .rightSport{
+    flex-basis: 50%;
+    margin-top: 5rem;
+    margin: 0 1%;
+}
+.subLeftSport{
+    width: 100%;
+    padding: 0 1%;
+}
+.leftSport h1{
+    font-weight: 700;
+    font-size: 40px;
+    color: #51536D;
+}
+.leftSport p{
+    color: #51536D;
+    font-size: 20px;
+    margin-top: 1rem;
+}
+.ratingsportcustomerSection{
+    display: flex;
+    margin-top: 2rem;
+}
+.ratingstars{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.sportRating-2{
+    margin: 0 40px;
+}
+.sportRating p, .sportRating-2 p{
+    color:black;
+    font-weight: 500;
+}
+
+
+/* TODO: second Section Right Colum */
+.rightSport-info{
+    display: flex;
+    margin: 5rem 0;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.rightSport-info span img{
+    width: 30px;
+    border-radius: 3px;
+    box-shadow:  3px 3px 10px #d4d4d4;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sports-details h3{
+    font-weight: 700;
+    color: #373737;
+    font-size: 30px;
+}
+.sports-details P{
+    color: #51536D;
+}
+
+
+
+
+
+
+
+
+/* TODO: Third Section rustpilot  ---3 */
+.trustpilot{
+    padding: 0 7%;
+    margin-bottom: 3%;
+}
+.trustpilotHed{
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+}
+.trustpilotHed h4{
+    font-size: 30px;
+    margin-left: 20px;
+}
+.trustpilotReviews{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.trustpilotReviews img{
+    width: 30px;
+    height: 30px;
+    background: rgb(108, 238, 108);
+    margin: 0 6px;
+}
+.trustpilotArrows{
+    margin-top: 10px;
+}
+.trustpilotArrows img{
+    cursor: pointer;
+}
+.trustpilotBoxScroll{
+    padding: 2%;
+}
+.scroll{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 2%;
+}
+.scroll::-webkit-scrollbar{
+    display: none;
+}
+.trustpilotBox{
+    min-width: 25vw;
+    min-height: 30vh;
+    overflow: hidden;
+    box-sizing: content-box;
+    position: relative;
+    border-radius: 5px;
+    padding: 2%;
+    background: #ffffff;
+    box-shadow:  1px 1px 5px #e6e6e6,
+                -1px -1px 5px #e6e6e6;
+                margin: 0 8px;
+                position: relative;
+                box-sizing: border-box;
+}
+.trustpilotStars {
+    margin-top: 10px;
+}
+.trustpilotStars img{
+    background: green;
+}
+.trustpilotDesc{
+    font-size: 13px;
+    color: #51536D;
+    margin-top: 1rem;
+}
+.trustpilotActiveDetails{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+}
+.trustpilotActiveDetails span{
+    width: 20px;
+    height: 20px;
+    background-color: brown;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  TODO:Container-QuestionFAQ */
+
+.Container-QuestionFAQ{
+    padding: 2% 7%;
+    margin-bottom: 5%;
+}
+
+.faqHead p{
+    font-weight: 600;
+    color: #FFC728;
+    font-size: 14px;
+}
+.faqHead h1{
+    font-size: 44px;
+    color: #373737;
+}
+.faqHead h3{
+    font-size: 20px;
+    color: #373737;
+}
+.accordion label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+}
+.fa-chevron-right{
+    color: #FFC728;
+    background: #fff;
+    padding: 12px 15px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px -1px rgb(231, 231, 231),
+    -5px -5px 10px 1px rgb(247, 250, 250);
+    transition: rotate() 3s;
+}
+.fa-chevron-right:active{
+    color: #fff;
+    background: #fff;
+    padding: 12px 15px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px -1px rgb(231, 231, 231),
+    -5px -5px 10px 1px rgb(247, 250, 250);
+    background: #FFC728;
+    transform: rotate(90deg);
+
+}
+.arrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 5px 5px 10px -1px rgb(231, 231, 231),
+                -5px -5px 10px 1px rgb(218, 255, 250);
+                display: none;
+}
+.accordion{
+    width: 100%;
+}
+.accordion li{
+    list-style: none;
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid green;
+    box-shadow: 5px 5px 10px -1px rgb(231, 231, 231),
+                -5px -5px 10px -1px rgb(255, 255, 255, 0.7);
+}
+.accordion li label{
+    display: flex;
+    color: #0F1730;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 700px;
+    cursor: pointer;
+} 
+input[type= "radio"]{
+    display: none;
+}
+.accordion .content{
+    color: #6F6C90;
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+.accordion input[type= "radio"]:checked + label + .content{
+    max-height: 400px;
+    padding: 10px 10px 20px ;
+}
+.showMoew{
+    float: right;
+    cursor: pointer;
+    color: #FFC728;
+    font-weight: 700;
+}
+
+
+.AirPortsContainer{
+    padding: 0 7%;
+    margin-bottom: 5%;
+}
+
+
+
+
+
+/* --------------------------------------house details page---------------------------------- */
+
+
+
+
+.house-details{
+    margin-top: 5%;
+    padding: 0 ;
+}
+.house-title .row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px 0;
+}
+.house-title span{
+    margin: 0 20px;
+}
+.house-title i{
+    color: #ff5361;
+    font-size: 14px;
+}
+.gallery{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: 'a a . .' 'a a . .';
+}
+.gallery img{
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+.gallery-img-1{
+    grid-area: a;
+}
+
+.contact-host{
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #FFC728;
+    font-weight: 800;
+    padding: 15px 50px;
+    border: 1px solid green;
+    border-radius: 8px;
+}
+.ShowMore{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+/* TODO: footer */
+.wrap{
+    margin-top: 4rem;
+    padding-top: 4rem ;
+}
+.flex-container {
+    padding: 0 2%;
+    margin-top: 0;
+    list-style: none;
+    background: #51536D;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .wrap{ 
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  } 
+
+.flex-item {
+    padding: 5px;
+    margin: 4rem auto;
+    color: white;
+    font-size: 12px;
+    text-align: start;
+  }
+  .logoItem p{
+    color: rgb(236, 236, 236);
+    font-size: 13px;
+    margin: 2rem 0;
+  }
+  .logoItem h4{
+    color: #FFC728;
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  .flex-item h4{
+    color: #FFC728;
+    margin-bottom: 1rem;
+    font-size: 15px;
+  }
+  .flex-item li{
+    margin-bottom: 0.5rem;
+  }
+  .flex-item li a{
+    text-decoration: none;
+    color: #F9F8FE;
+  }
+  .footerInput{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.3rem 0;
+    background: white;
+    border-radius: 8px;
+    border: 2px solid gray;
+  }
+  .footerInput input{
+    outline: none;
+    text-decoration: none;
+    border: none;
+    padding:  0 8px;
+    background: transparent;
+    width: 100%;
+  }
+  .footerInput span{
+    width: 40px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    cursor: pointer;
+    background: #FFC728;
+    border-radius: 8px;
+    margin-right: 6px;
+  }
+  .footerEnd{
+    background: #51536D;
+    padding: 2rem;
+    border-top: 2px solid #041434;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .usefulLinks a{
+    text-decoration: none;
+    color: white;
+    margin-left: 2rem;
+  }
+  .socialIcons{
+    color: white;
+  }
+  .socialIcons i{
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+
+
+  
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 990px){
+    .sportcustomerSection{
+        flex-direction: column;
+    }
+    .leftSport h1{
+        font-weight: 700;
+        font-size: 35px;
+        text-align: center;
+    }
+    .leftSport p{
+        font-size: 13px;
+        text-align: center;
+    }
+    .ratingsportcustomerSection{
+        justify-content: space-between;
+    }
+    .sportRating-2{
+        margin: 0 20px;
+    }
+    .trustpilotBox{
+        width: 20vw;
+        min-width: 30vw;
+        height: 30vh;
+        min-height: 50vh;
+    }
+    .trustpilotActiveDetails span{
+        width: 15px;
+        height: 15px;
+        background-color: brown;
+        margin-right: 10px;
+        margin-bottom: 2%;
+        border-radius: 50%;
+    }
+}
+
+
+
+@media only screen and (max-width: 768px){
+    .navbar{
+        border-radius: 0px;
+        box-shadow:  1px 1px 2px #ffffff;
+    }
+    .fa-bars{
+        display: block;
+    }
+    .CountriesFlags-info{
+        display: none;
+    }
+    .logo{
+        width: 100px;
+    }
+    .stepLine{
+        display: flex;
+        margin-top: 3rem;
+        font-size: 10px;
+    }
+    .underLine{
+        width: 80vw;
+    }
+    .curcleOfSteps{
+        width: 20px;
+        height: 20px;
+        margin: 0;
+        font-weight: 500;
+    }
+    .stepLine{
+            overflow: hidden;
+    }
+    .lineOfSetps{
+        width: 3rem;
+        height: 2px;
+        border-radius: 12px;
+        background: gray;
+        margin: 0;
+    }
+    .setpProcess p{
+        font-size: 10px;
+        margin: 0 3px;
+    }
+
+
+    /* TODO: Container */
+    .container{
+        display: flex;
+        margin-top: 10%;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+    }
+    .left{
+        padding: 0 7%;
+    }
+    .left h1{
+        text-align: center;
+        font-size: 27px;
+    }
+    .left p{
+        margin: 1rem 0;
+        font-size: 15px;
+        text-align: center;
+    }
+    .avatorCharacters{
+        justify-content: center;
+    }
+    .Rating{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .Right{
+        background: gray;
+        padding: 2% 4%;
+        margin: 2% 0;
+    }
+    .right{
+        margin-left: 0;
+        padding: 4% 2%;
+    }
+    .lineSection{
+        font-size: 12px;
+    }
+    .lineSection span{
+        margin: 0 5px;
+        font-size: 10px;
+    }
+    .line{
+        display: none;
+    }
+    .subLeftSport{
+        margin-top: 10%;
+    }
+
+
+    .trustpilot{
+        padding: 3% 5%;
+        margin: 6% 0;
+    }
+    .trustpilotHed img{
+        width: 20px;
+    }
+    .trustpilotHed h4{
+        font-size: 22px;
+        margin-left: 10px;
+    }
+    .trustpilotReviews p{
+        font-size: 12px;
+        font-weight: 700;
+    }
+    .trustpilotReviews img{
+        width: 13px;
+        height: 13px;
+        margin-left: 5px;
+        margin-right: 0;
+    }
+    .trustpilotBox{
+        width: 22vw;
+        min-width: 50vw;
+        height: 30vh;
+        min-height: 40vh;
+        border-radius: 5px;
+        padding: 4%;
+        text-align: start;
+    }
+    .trustpilotDesc{
+        font-size: 12px;
+    }
+    .trustpilotActiveDetails p{
+       display: none;
+    }
+    .trustpilotActiveDetails span{
+       display: none;
+    }
+    .gallery{
+        grid-template-areas: 'a a' '. .' '. .';
+    }
+    .fa-chevron-right:active{
+        padding: 4px 7px;
+    }
+    
+.flex-item {
+    padding: 5px;
+    margin: 1rem auto;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+  }
+   .usefulLinks a{
+    font-size: 12px;
+    margin-left: 4px;
+  }
+  .faqHead{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    }
+    .FAQ{
+        margin-bottom: 3%;
+    }
+}
+
+
+
+
+
+
+
+
+
+.BookContainer{
+    padding: 0 7%;
+    margin-top: 5%;
+}
+.Info-BookContainer{
+    font-weight: 800px;
+    font-size: 20px;
+    color: #51536D;
+}
+.Info-BookContainer p{
+    color: rgb(236, 193, 0);
+    font-size: 13px;
+    font-weight: 600;
+}
+.BookContainer-Boxes{
+    display: flex;
+    flex-wrap: wrap;
+}
+  .flex-BookContainer{ 
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    } 
+    .flex-item-Banner{
+        padding:1%;
+        background: white;
+        width: 349px;
+        height: auto;
+        margin-top: 5%;
+        margin-left: 2%;
+        margin-bottom: 5rem;
+        border-radius: 32px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        box-shadow: 0 5px 20px -1px #d6d6d6;
+    }
+    .flex-wrap h1{
+        margin-top: 2rem;
+        font-size: 20px;
+        color: #51536D;
+    }
+    .flex-wrap p{
+        color: gray;
+        font-size: 15px;
+        margin-top: 10px;
+        padding-bottom: 3%;
+    }
+    .Banner-box{
+        background: #faf2db;
+        padding: 20% 20%;
+        border-radius: 32px;
+    }
+
+
+    /* TODO: Banner */
+    .Banner{
+        display: flex;
+        padding: 4% 7%;        
+        background: #51536D;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .Banner div{
+        flex-wrap: wrap;
+    }
+    .left-Banner{
+        flex-basis: 48%;
+        color: white;
+        margin-right: 2%;
+    }
+    .left-Banner h1{
+        font-size: 30px;
+        margin-bottom: 2rem;
+    }
+    .left-Banner p{
+        font-size: 15px;
+        margin-bottom: 3rem;
+        line-height: 20px;
+    }
+    .left-Banner button{
+        outline: none;
+        border: none;
+        padding: 15px 30px;
+        background: #F8C732;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .right-Banner{
+        flex-basis: 50%;
+    }
+
+@media only screen and (max-width: 768px){
+    .Info-BookContainer{
+       display: flex;
+       flex-direction: column;
+       text-align: center;
+    }
+    .flex-wrap{ 
+        justify-content: center;
+    } 
+    .Banner{
+        padding: 4% 2%;        
+        background: #51536D;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .left-Banner{
+        flex-basis: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3%;
+    }
+    .left-Banner h1{
+        text-align: center;
+    }
+    .left_banner p{
+        text-align: center;
+    }
+    .right-Banner{
+        flex-basis: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .right-Banner img{
+        width: 300px;
+    }
+}

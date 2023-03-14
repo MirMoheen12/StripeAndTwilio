@@ -1,0 +1,352 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5% 7%;
+}
+.CountriesFlags{
+    display: flex;
+    margin: 0 5px;
+}
+.CountriesFlags-info{
+    display: flex;
+}
+.horihentalLine{
+    width: 3px;
+    height: 20px;
+    border-radius: 10px;
+    background: gray;
+    margin-right: 5px;
+}
+.fa-caret-down{
+    color: gray;
+    margin: 0 8px;
+}
+.CountriesFlags p{
+    color: gray;
+    font-weight: 500;
+}
+.fa-bars{
+    display: none;
+}
+.stepLine{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.setpProcess{
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+}
+.curcleOfSteps{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgb(131, 131, 131);
+    margin: 0 1rem;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lineOfSetps{
+    width: 5rem;
+    height: 4px;
+    border-radius: 12px;
+    background: gray;
+    margin: 0 1rem;
+}
+
+
+
+
+
+
+
+
+/* TODO: contact container */
+.ContactInformation{
+    margin-top: 5rem;
+    padding: 0 7%;
+}
+.ContactInformation h1{
+    font-size: 2rem;
+    font-weight: 700;
+}
+.container{
+    display: flex;
+    margin-top: 0.9rem;
+    flex-wrap: wrap;
+}
+.left{
+    width: 65%;
+    margin-right: 19px;
+
+}
+.CheckContactInfo{
+    display: flex;
+    background: #F7F8F8;
+    padding: 10px 10px;
+}
+.CheckContactInfo input{
+    accent-color: #fff;
+}
+.CheckContactInfo p{
+    margin-left: 10px;
+}
+.EmailConatctInfo{
+    margin-top: 3%;
+}
+.EmailConatctInfo label{
+    display: flex;
+    flex-direction: column;
+}
+.EmailConatctInfo input{
+    flex-direction: column;
+    width: 300px;
+    outline: none;
+    border: none;
+    padding: 0.6rem 0.5rem;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow:  5px 5px 5px #f3f3f3,
+                 -1px -1px 5px #d1d1d1;
+}
+#tel, #first{
+    width: 400px;
+}
+.NameSecrtion{
+    margin-top: 3%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.Conditions{
+    margin-top: 3%;
+    background: transparent;
+}
+.Conditions p span{
+    color: rgb(255, 238, 3);
+}
+.termsAndContadions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.termsAndContadions button{
+    outline: none;
+    border: none;
+    background: green;
+    color: white;
+    font-weight: 600;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+.right{
+    flex-basis: 30%;
+}
+
+.right-container{
+    flex-basis: 30%;
+    margin: 1%;
+    margin-top: 2rem;
+}
+.rightContainerInfo{
+    border-radius: 13px;
+    width: 100%;
+    border-radius: 13px;
+    border-radius: 13px;
+    background: #ffffff;
+    box-shadow:  5px 5px 10px #f3f3f3,
+                 -5px -5px 10px #f3f3f3;
+}
+.rightContainerMap{
+    padding: 2%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.rightContainerDetails{
+    padding: 2%;
+}
+.rightContainerDetails strong{
+    color: yellow;
+}
+.rightContainerDetailsInfo{
+    margin: 1rem 0;
+}
+.buttonInfo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttonInfo button{
+    padding: 1rem 3rem;
+    outline: none;
+    border: none;
+    background-color: #48A946;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 3%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1158px){
+    .stepLine{
+      display: none;
+    }
+    .container{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .NameSecrtion{
+        margin-top: 5%;
+        flex-direction: column;
+    }
+    #tel, #first{
+        width: 300px;
+    }
+    .left{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+    
+    }
+    
+}
+
+@media only screen and (max-width: 768px){
+    .navbar{
+        border-radius: 0px;
+    background: #ffffff;
+    box-shadow:  2px 2px 8px #bdbdbd;
+    }
+    .fa-bars{
+        display: block;
+    }
+    .CountriesFlags-info{
+        display: none;
+    }
+    .logo{
+        width: 100px;
+    }
+    .stepLine{
+        display: flex;
+        margin-top: 3rem;
+        font-size: 10px;
+    }
+    .curcleOfSteps{
+        width: 20px;
+        height: 20px;
+        margin: 0;
+        font-weight: 500;
+    }
+    .stepLine{
+            overflow: hidden;
+    }
+    .lineOfSetps{
+        width: 3rem;
+        height: 2px;
+        border-radius: 12px;
+        background: gray;
+        margin: 0;
+    }
+    .setpProcess p{
+        font-size: 10px;
+        margin: 0 3px;
+    }
+    .Conditions p {
+        font-size: 12px;
+    }
+    .termsAndContadions{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .termsAndContadions button{
+        font-weight: 600;
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+    .container{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .NameSecrtion{
+        margin-top: 5%;
+        flex-direction: column;
+        display: flex;
+        justify-content: flex-start;
+    }
+    #tel, #first{
+        width: 500px;
+    }
+    .left{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .EmailConatctInfo input{
+        width: 300px;
+        max-width: 300px;
+    }
+
+}
+
+@media only screen and (max-width: 554px){
+    .stepLine{
+       display: none;
+    }
+    .termsAndContadions button{
+        font-weight: 600;
+        padding: 4px 15px;
+        font-size: 8px;
+    }
+}
